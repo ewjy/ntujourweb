@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Taiwan University - Your Future Starts Here</title>
+    <title>國立臺灣大學 - 您的未來從這裡開始</title>
     <style>
         * {
             margin: 0;
@@ -12,8 +12,8 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+            line-height: 1.8;
             color: #333;
             background-color: #f8f9fa;
         }
@@ -44,6 +44,11 @@
             color: white;
             z-index: 2;
             position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
         
         .banner h1 {
@@ -61,7 +66,10 @@
         
         .banner p {
             font-size: 1rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: bold;
+            color: white;
+            text-align: center;
         }
         
         @media (min-width: 768px) {
@@ -126,9 +134,49 @@
             border-radius: 8px;
             margin: 2rem 0;
             text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.6;
+            position: relative;
         }
         
-
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.15);
+            border-radius: 8px;
+        }
+        
+        .highlight > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .highlight h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        
+        .highlight p {
+            font-size: 1rem;
+            margin-bottom: 0;
+            font-weight: bold;
+            color: white;
+        }
+        
+        @media (min-width: 768px) {
+            .highlight h3 {
+                font-size: 1.6rem;
+            }
+            
+            .highlight p {
+                font-size: 1.1rem;
+            }
+        }
         
         .stats {
             display: flex;
@@ -175,46 +223,48 @@
     <div class="banner">
         <div class="banner-overlay"></div>
         <div class="banner-content">
-            <h1>National Taiwan University</h1>
-            <p>Excellence in Education, Innovation in Research</p>
+            <h1>國立臺灣大學</h1>
+            <p>教育卓越，研究創新</p>
         </div>
     </div>
     
     <div class="container">
         <div class="content">
-            <h2>Shape Your Future at Taiwan's Premier University</h2>
+            <h2>在臺灣頂尖學府開創您的未來</h2>
             
-            <p>Welcome to National Taiwan University (NTU), where academic excellence meets cutting-edge innovation. As Taiwan's flagship institution and one of Asia's most prestigious universities, NTU has been nurturing brilliant minds and pioneering groundbreaking research for nearly a century.</p>
+            <p>歡迎來到國立臺灣大學（臺大），這裡是學術卓越與前沿創新的結合地。作為臺灣的旗艦學府和亞洲最具聲望的大學之一，臺大近一世紀以來一直致力於培育優秀人才並開創突破性的研究成果。</p>
             
-            <p>At NTU, you'll join a vibrant community of over 30,000 students from around the world, learning from distinguished faculty members who are leaders in their fields. Our comprehensive range of programs spans engineering, medicine, liberal arts, business, and the sciences, offering you unlimited opportunities to explore your passions and develop your expertise.</p>
+            <p>國立臺灣大學是一所歷史悠久、學科齊全、學術實力雄厚、辦學特色鮮明，在國際上具有重要影響力與競爭力的綜合性大學，在多個學術領域具有非常前瞻的科技實力，擁有世界一流的實驗室與師資力量，各種排名均位於全球前列。歡迎大家報考國立臺灣大學。</p>
+            
+            <p>在臺大，您將加入一個充滿活力的學術社群，與來自世界各地的三萬多名學生一起學習，並師從各領域的傑出教授。我們提供涵蓋工程、醫學、文學、商學和科學等全方位的學程，為您提供無限的機會去探索興趣並發展專業知識。</p>
             
             <div class="stats">
                 <div class="stat-item">
                     <span class="stat-number">#1</span>
-                    <div class="stat-label">University in Taiwan</div>
+                    <div class="stat-label">臺灣第一學府</div>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">11</span>
-                    <div class="stat-label">Colleges</div>
+                    <div class="stat-label">個學院</div>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">30,000+</span>
-                    <div class="stat-label">Students</div>
+                    <div class="stat-label">名學生</div>
                 </div>
             </div>
             
-            <p>What sets NTU apart is our commitment to fostering critical thinking, creativity, and global citizenship. Our state-of-the-art facilities, extensive research opportunities, and strong industry partnerships ensure that you'll graduate not just with knowledge, but with the skills and networks needed to make a meaningful impact in your chosen field.</p>
+            <p>臺大的獨特之處在於我們致力於培養批判性思維、創造力和全球公民意識。我們擁有最先進的設施、豐富的研究機會和強大的產業合作夥伴關係，確保您不僅能獲得知識，更能掌握在所選領域產生重大影響所需的技能和人脈。</p>
             
-            <p>Located in the heart of Taipei, you'll experience the perfect blend of traditional Chinese culture and modern innovation. From participating in groundbreaking research projects to engaging with Taiwan's dynamic tech industry, your time at NTU will be transformative both academically and personally.</p>
+            <p>臺大位於臺北市中心，您將體驗到傳統中華文化與現代創新的完美融合。從參與突破性的研究計劃到與臺灣蓬勃發展的科技產業接軌，您在臺大的求學時光將在學術和個人層面都帶來深刻的轉變。</p>
             
             <div class="highlight">
-                <h3>Ready to Begin Your Journey?</h3>
-                <p>Applications are now open for the upcoming academic year. Don't miss your chance to join Taiwan's most prestigious academic community and unlock your potential on the global stage.</p>
+                <h3>準備好開始您的學術旅程了嗎？</h3>
+                <p>新學年度的申請已經開始。不要錯過加入臺灣最負盛名的學術社群，在全球舞台上發揮您潛力的機會。</p>
             </div>
             
-            <p>Whether you're interested in pursuing undergraduate studies, graduate research, or international exchange programs, NTU offers pathways to success that will challenge you intellectually while supporting your personal growth. Our alumni network spans the globe, including Nobel laureates, industry leaders, and influential policymakers who continue to shape our world.</p>
+            <p>無論您有意攻讀學士學位、研究所課程，或參與國際交換計劃，臺大都提供通往成功的道路，在支持您個人成長的同時挑戰您的智力。我們的校友網絡遍布全球，包括諾貝爾獎得主、業界領袖和具有影響力的政策制定者，他們持續影響著我們的世界。</p>
             
-            <p>Take the first step toward an extraordinary future. Join us at National Taiwan University, where your ambitions meet limitless possibilities.</p>
+            <p>踏出邁向非凡未來的第一步。加入國立臺灣大學，在這裡您的雄心壯志將遇見無限可能。</p>
         </div>
     </div>
 </body>
