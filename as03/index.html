@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>傳統中文 Bootstrap 網頁</title>
+    <title>Bootstrap網頁</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .top-banner {
-            height: 48px;
-            background: #343a40;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            letter-spacing: 2px;
-        }
+    .top-banner {
+        background: #17a2b8 !important;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+        padding: 3rem;
+        height: auto;
+    }
         .section-banner {
             height: 100vh;
             background: #ff5733;
@@ -29,23 +30,33 @@
         .section-content {
             min-height: calc(200vh - 8rem);
             padding: 2rem;
-            background: #fff;
+            background: #f0f0f0;
             color: #333;
+        }
+        .content-box {
+            background: #dcdcdc;
+            color: #000;
+            padding: 2rem;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
     <div class="top-banner">
-        傳統中文網站
+        這裡是Banner
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">首頁</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#section1">區段1</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section2">區段2</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section3">區段3</a></li>
@@ -54,33 +65,75 @@
         </div>
     </nav>
 
+    <div class="py-5"></div>
+
     <section id="section1">
         <div class="section-banner">
             區段1橫幅
         </div>
         <div class="section-content">
-            這是區段1的內容。
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="content-box">
+                            <h2>區段1</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <div class="py-5"></div>
 
     <section id="section2">
         <div class="section-banner">
             區段2橫幅
         </div>
         <div class="section-content">
-            這是區段2的內容。
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="content-box">
+                            <h2>區段2</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis. Donec id justo non metus auctor commodo ut quis enim. Mauris imperdiet, nibh vitae interdum ullamcorper, metus nisl fermentum massa, quis commodo arcu lorem non nisi.</p>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+                            <p>Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <div class="py-5"></div>
 
     <section id="section3">
         <div class="section-banner">
             區段3橫幅
         </div>
         <div class="section-content">
-            這是區段3的內容。
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="content-box">
+                            <h2>區段3</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum rhoncus. Cras non augue id magna placerat tempus. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.</p>
+                            <p>Mauris eleifend est et turpis. Duis id erat ac velit imperdiet consequat. Proin viverra mollis enim. Aenean feugiat, lectus vel euismod sollicitudin, tellus elit rhoncus sem, ac suscipit nisl lorem non massa.</p>
+                            <p>Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <div class="py-5"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="smooth-scroll.js"></script>
 </body>
 </html>
