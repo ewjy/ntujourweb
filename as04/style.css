@@ -1,0 +1,98 @@
+body {
+    font-family: "Iansui", Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.iansui-regular {
+  font-family: "Iansui", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar-top {
+    z-index: 1050;
+}
+
+.story-section {
+    position: relative;
+    height: 500vh;
+}
+
+.image-content-wrapper {
+    position: sticky;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid #eee;
+    top: 56px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.image-content-wrapper.visible {
+    opacity: 1;
+}
+
+.story-section:last-of-type .image-content-wrapper {
+    border-bottom: none;
+}
+
+.caption-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    max-width: 300px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 20px;
+    line-height: 1.4;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    pointer-events: auto;
+}
+
+#section1 .image-content-wrapper {
+    background-image: url('1.png');
+}
+#section2 .image-content-wrapper {
+    background-image: url('2.png');
+}
+#section3 .image-content-wrapper {
+    background-image: url('3.png');
+}
+#section4 .image-content-wrapper {
+    background-image: url('4.png');
+}
+
+.final-content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 20px;
+}
