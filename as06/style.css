@@ -1,0 +1,334 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* 翻卡效果 */
+        .card-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .flip-card {
+            perspective: 1000px;
+            height: 400px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .flip-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .flip-card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flip-card-back {
+            background: white;
+            transform: rotateY(180deg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .flip-card-back h3 {
+            font-size: 1.8rem;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .flip-card-back p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* 章節容器 - sticky效果 */
+        .chapter-container {
+            height: 300vh;
+            position: relative;
+        }
+
+        .sticky-content {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Focus Mode 章節 */
+        .content-section {
+            height: 100vh;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            transition: filter 0.5s, opacity 0.5s, background-color 0.5s;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .content-section.focus-out::before {
+            opacity: 0.7;
+        }
+
+        .content-section:nth-child(even) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .content-section p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: white;
+        }
+
+        /* 文字底線效果 */
+        .highlight {
+            position: relative;
+            display: inline;
+            color: #fff;
+            font-weight: 600;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 3px;
+            background: white;
+            transition: width 0.6s ease;
+        }
+
+        .highlight.underlined::after {
+            width: 100%;
+        }
+
+        /* 第三章圖片效果 */
+        .image-section {
+            height: 100vh;
+            padding: 0;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .image-section.focus-out::before {
+            opacity: 0.7;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            transition: filter 1.5s ease;
+        }
+
+        .image-wrapper.grayscale {
+            filter: grayscale(100%);
+        }
+
+        .image-wrapper.colorized {
+            filter: grayscale(0%);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .image-overlay-content {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .image-overlay-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .image-overlay-content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 額外的視覺元素 */
+        .spacer {
+            height: 50vh;
+            background: linear-gradient(180deg, white 0%, #f0f0f0 100%);
+        }
+
+        .footer {
+            padding: 3rem 2rem;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+
+        /* 滾動提示 */
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        .scroll-hint::before {
+            content: '↓';
+            font-size: 2rem;
+            color: white;
+            opacity: 0.8;
+        }
