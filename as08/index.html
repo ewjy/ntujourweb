@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Progress Bar */
+        .progress-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 9999;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #00d2d3);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+            transition: width 0.1s ease-out;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Landing Section */
+        .landing-section {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Onboarding Section */
+        .onboarding-wrapper {
+            height: 300vh;
+            position: relative;
+        }
+
+        .onboarding-section {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: #f8f9fa;
+            overflow: hidden;
+        }
+
+        .video-thumbnails {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .thumbnail-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .onboarding-text {
+            height: 100vh;
+            overflow: hidden;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .onboarding-text-content {
+            position: relative;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Video Story Sections */
+        .video-story-wrapper {
+            height: 200vh;
+            position: relative;
+        }
+
+        .video-story-section {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .story-overlay {
+            position: absolute;
+            left: 50%;
+            z-index: 2;
+            width: 350px;
+            max-width: 90%;
+            padding: 40px 30px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transform: translateX(-50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        .story-overlay h2 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .story-overlay p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+
+    <!-- Landing Section -->
+    <section class="landing-section">
+        <div class="text-center">
+            <h1 class="display-1 fw-bold mb-4">Welcome</h1>
+            <p class="lead fs-3">Scroll down to begin your journey</p>
+        </div>
+    </section>
+
+    <!-- Onboarding Section with Scroll -->
+    <div class="onboarding-wrapper">
+        <div class="onboarding-section">
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                    <!-- Video Thumbnails -->
+                    <div class="col-md-6 p-0">
+                        <div class="video-thumbnails">
+                            <video class="thumbnail-video" autoplay muted loop playsinline>
+                                <source src="1.mp4" type="video/mp4">
+                            </video>
+                            <video class="thumbnail-video" autoplay muted loop playsinline>
+                                <source src="2.mp4" type="video/mp4">
+                            </video>
+                            <video class="thumbnail-video" autoplay muted loop playsinline>
+                                <source src="3.mp4" type="video/mp4">
+                            </video>
+                            <video class="thumbnail-video" autoplay muted loop playsinline>
+                                <source src="4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Introduction Text -->
+                    <div class="col-md-6 p-0">
+                        <div class="onboarding-text" id="onboardingText">
+                            <div class="onboarding-text-content" id="onboardingContent">
+                                <h2 class="mb-4">Our Story</h2>
+                                <p class="mb-4">Welcome to an immersive experience that will take you through a journey of discovery and inspiration.</p>
+                                <p class="mb-4">Each video tells a unique story, crafted with care and attention to detail. As you scroll through this section, take your time to read and absorb the narrative we've created for you.</p>
+                                <p class="mb-4">The videos you see on the left are just a preview of what's to come. Each one represents a chapter in our story, waiting to unfold in full detail.</p>
+                                <p class="mb-4">We believe in the power of visual storytelling to connect, inspire, and transform. Through these carefully curated moments, we invite you to see the world through a different lens.</p>
+                                <p class="mb-4">As you continue scrolling, you'll notice how each element comes together to create a cohesive narrative. This is intentional - every detail matters.</p>
+                                <p class="mb-4">Take your time with this section. There's no rush. Let the words sink in as you prepare for the full experience ahead.</p>
+                                <p class="mb-4">Once you've scrolled through all the text, the next chapter will begin. Each of the four videos will reveal itself in full screen glory, accompanied by its own story.</p>
+                                <p class="mb-4">Keep scrolling to continue your journey...</p>
+                                <p class="mb-5 pb-5">The adventure awaits below.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Story 1 -->
+    <div class="video-story-wrapper">
+        <div class="video-story-section">
+            <video class="background-video" autoplay muted loop playsinline>
+                <source src="1.mp4" type="video/mp4">
+            </video>
+            <div class="story-overlay">
+                <h2>Chapter One</h2>
+                <p>This is the first chapter of our story. Here, we introduce the beginning of something extraordinary.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Story 2 -->
+    <div class="video-story-wrapper">
+        <div class="video-story-section">
+            <video class="background-video" autoplay muted loop playsinline>
+                <source src="2.mp4" type="video/mp4">
+            </video>
+            <div class="story-overlay">
+                <h2>Chapter Two</h2>
+                <p>The journey continues with deeper exploration and new discoveries that shape our understanding.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Story 3 -->
+    <div class="video-story-wrapper">
+        <div class="video-story-section">
+            <video class="background-video" autoplay muted loop playsinline>
+                <source src="3.mp4" type="video/mp4">
+            </video>
+            <div class="story-overlay">
+                <h2>Chapter Three</h2>
+                <p>As we near the end, the pieces come together revealing the bigger picture of our narrative.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Story 4 -->
+    <div class="video-story-wrapper">
+        <div class="video-story-section">
+            <video class="background-video" autoplay muted loop playsinline>
+                <source src="4.mp4" type="video/mp4">
+            </video>
+            <div class="story-overlay">
+                <h2>Chapter Four</h2>
+                <p>The final chapter brings closure and opens new possibilities for what lies ahead.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Progress Bar Update
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Onboarding Text Scroll Effect
+        const onboardingWrapper = document.querySelector('.onboarding-wrapper');
+        const onboardingContent = document.getElementById('onboardingContent');
+        const onboardingText = document.getElementById('onboardingText');
+
+        window.addEventListener('scroll', () => {
+            if (!onboardingWrapper || !onboardingContent) return;
+
+            const wrapperRect = onboardingWrapper.getBoundingClientRect();
+            const wrapperTop = wrapperRect.top;
+            const wrapperHeight = onboardingWrapper.offsetHeight;
+            const viewportHeight = window.innerHeight;
+
+            // Check if we're in the onboarding section
+            if (wrapperTop <= 0 && wrapperTop > -wrapperHeight + viewportHeight) {
+                // Calculate scroll progress within the wrapper (0 to 1)
+                const scrollProgress = Math.abs(wrapperTop) / (wrapperHeight - viewportHeight);
+                
+                // Get content height to calculate how much to translate
+                const contentHeight = onboardingContent.offsetHeight;
+                const containerHeight = onboardingText.offsetHeight;
+                
+                // Calculate translation to make content scroll up and disappear
+                // The content should scroll up by its full height + container height
+                const maxTranslate = contentHeight + containerHeight;
+                const translateY = -scrollProgress * maxTranslate;
+                
+                onboardingContent.style.transform = `translateY(${translateY}px)`;
+            }
+        });
+
+        // Story Overlay Scroll Effect (Bottom to Top)
+        const storyWrappers = document.querySelectorAll('.video-story-wrapper');
+        
+        window.addEventListener('scroll', () => {
+            storyWrappers.forEach(wrapper => {
+                const overlay = wrapper.querySelector('.story-overlay');
+                if (!overlay) return;
+
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const wrapperTop = wrapperRect.top;
+                const wrapperHeight = wrapper.offsetHeight;
+                const viewportHeight = window.innerHeight;
+
+                // Only start animation when section is fully in view (wrapperTop <= 0)
+                if (wrapperTop <= 0 && wrapperTop > -wrapperHeight + viewportHeight) {
+                    // Calculate scroll progress within the wrapper (0 to 1)
+                    const scrollProgress = Math.abs(wrapperTop) / (wrapperHeight - viewportHeight);
+                    
+                    // Move from bottom (100vh) to top (-overlay height)
+                    const startPosition = viewportHeight;
+                    const endPosition = -overlay.offsetHeight;
+                    const currentPosition = startPosition + (endPosition - startPosition) * scrollProgress;
+                    
+                    overlay.style.top = `${currentPosition}px`;
+                } else if (wrapperTop > 0) {
+                    // Section hasn't fully entered viewport yet - keep at bottom
+                    overlay.style.top = `${viewportHeight}px`;
+                } else {
+                    // Section has passed - keep at top
+                    overlay.style.top = `-${overlay.offsetHeight}px`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
