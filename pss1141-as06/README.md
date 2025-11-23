@@ -1,5 +1,5 @@
 # 文字生成小工具（前端靜態版）
-前端展示網頁這邊請：<a href="https://ntujourweb.oty.tw/pss1141-as06/" target=_blank>https://ntujourweb.oty.tw/pss1141-as06/</a>
+前端展示網頁這邊請：<https://ntujourweb.oty.tw/pss1141-as06/>
 
 以 OpenAI `gpt-5-nano` 模型生成中文文本。純前端（HTML + CSS + JS），不需 Node.js 或後端伺服器。
 
