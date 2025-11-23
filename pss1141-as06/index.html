@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>文字生成小工具 — gpt-5-nano</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-top">
+        <h1>文字生成小工具</h1>
+        <a class="readme-link" href="./README.md" target="_blank" rel="noopener">README</a>
+      </div>
+      <p class="subtitle">OpenAI gpt-5-nano（僅前端 HTML/CSS/JS）</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="form-grid">
+          <label class="block">
+            <span class="label">OpenAI API Key</span>
+            <input id="apiKey" class="input" type="password" placeholder="sk-...（不會被儲存）" />
+            <small class="hint">僅供本機測試。公開部署請改用後端代理避免金鑰外洩。</small>
+          </label>
+
+          <label class="block">
+            <span class="label">關鍵字／句子（可多行）</span>
+            <textarea id="userInput" class="textarea" rows="5" placeholder="例如：
+ - 秋天的午後
+ - 城市裡的孤獨
+ - 期待重逢的心情"></textarea>
+          </label>
+
+          <div class="row">
+            <div class="block grow">
+              <span class="label">生成類型</span>
+              <div class="genre-bar" id="genreBar">
+                <button class="genre-btn active" data-genre="random">隨機</button>
+                <button class="genre-btn" data-genre="huluan">唬爛文</button>
+                <button class="genre-btn" data-genre="poem">現代詩</button>
+                <button class="genre-btn" data-genre="prose">散文</button>
+                <button class="genre-btn" data-genre="lyrics">歌詞</button>
+                <button class="genre-btn" data-genre="shortstory">短篇故事</button>
+              </div>
+            </div>
+
+            <label class="block slider">
+              <span class="label">字數上限：<span id="lenVal">150</span> 字（最多 300）</span>
+              <input id="length" type="range" min="50" max="300" value="150" step="10" />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="generateBtn" class="btn primary">生成</button>
+            <button id="clearBtn" class="btn ghost">清除</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="result-header">
+          <h2>輸出結果</h2>
+          <div class="result-actions">
+            <button id="copyBtn" class="btn small">複製</button>
+          </div>
+        </div>
+        <pre id="output" class="output" aria-live="polite"></pre>
+        <div id="status" class="status" role="status"></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>© 2025 教學示範 | 僅供學術練習使用</span>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
