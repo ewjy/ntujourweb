@@ -1,0 +1,181 @@
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Prevent accidental horizontal scroll on body */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif TC', serif;
+}
+
+/* Header Styling */
+#intro-header {
+    position: relative;
+    overflow: hidden;
+}
+
+#header-bg-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%; /* Oversize width to ensure coverage */
+    min-height: 150%; /* Oversize height to ensure coverage */
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    pointer-events: none; /* Don't interfere with clicks */
+}
+
+#header-bg-container img {
+    max-width: 100%;
+    height: 100px; /* Approximate 50% scale for typical banners */
+    width: auto;
+    flex-shrink: 0;
+    margin: 2px; /* Slight spacing for collage effect */
+}
+
+/* Ensure text is readable over the image */
+#intro-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85); /* Slightly stronger overlay for busy background */
+    z-index: 1;
+}
+
+#intro-header .text-center {
+    position: relative;
+    z-index: 2;
+}
+
+/* Chapter Styling */
+.chapter-header {
+    position: relative;
+    z-index: 10;
+}
+
+/* Scrolly Section Base */
+.scrolly-section {
+    position: relative;
+    width: 100%;
+    /* User requested 300vh height for sections to allow "staying" for a period */
+    height: 300vh; 
+}
+
+/* Vertical Scroll Section Styling */
+.vertical-scroll .sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vertical-scroll .background-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.vertical-scroll .content-overlay {
+    position: relative;
+    z-index: 1;
+    padding-top: 10vh; /* Start content a bit down */
+    /* 
+       To make the content scroll "within" the sticky container, 
+       we can either let it flow naturally (but the container is overflow:hidden)
+       OR we can make the overlay itself scrollable?
+       
+       Actually, if the container is sticky and 100vh, and the parent is 300vh,
+       the parent scrolls. The sticky container stays fixed.
+       The content INSIDE the sticky container will NOT scroll unless we animate it 
+       or if the sticky container is just a background holder.
+       
+       Correction: 
+       If we want "info boxes can scroll within the section", 
+       we should probably NOT make the *entire* content wrapper sticky.
+       
+       Better approach for Vertical:
+       - Parent (.scrolly-section) is 300vh.
+       - Background is sticky (top: 0, height: 100vh).
+       - Content is normal flow (absolute or relative on top of background).
+    */
+}
+
+/* Revised Vertical Scroll Logic */
+.vertical-scroll {
+    /* Allow content to flow */
+}
+
+.vertical-scroll .sticky-container {
+    /* This acts as the background holder */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+}
+
+.vertical-scroll .content-overlay {
+    /* This content scrolls naturally over the sticky background */
+    position: relative;
+    z-index: 1;
+    margin-top: -100vh; /* Pull content up to overlap the sticky background */
+    min-height: 300vh; /* Ensure it matches the section height so we can scroll through it */
+    pointer-events: none; /* Let clicks pass through to background if needed, but usually we want text interaction */
+}
+
+.vertical-scroll .content-overlay .info-box {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.9);
+    margin-bottom: 80vh; /* Spacing between boxes */
+}
+.vertical-scroll .content-overlay .info-box:first-child {
+    margin-top: 50vh;
+}
+
+
+/* Horizontal Scroll Section Styling */
+.horizontal-scroll {
+    /* Height is defined by .scrolly-section (300vh) */
+}
+
+.horizontal-scroll .sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.horizontal-track {
+    display: flex;
+    height: 100%;
+    width: max-content; /* Will be calculated or set to fit all panels */
+    will-change: transform;
+}
+
+.h-panel {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
