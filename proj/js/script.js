@@ -68,6 +68,39 @@ document.addEventListener('DOMContentLoaded', () => {
             // Apply transform
             track.style.transform = `translateX(${translateX}px)`;
         });
+
+        // Crossfade backgrounds between sec-1-2 and sec-2-1
+        const s12Bg = document.querySelector('#sec-1-2 .background-visual');
+        const s21Bg = document.querySelector('#sec-2-1 .background-visual');
+        const s21Section = document.getElementById('sec-2-1');
+        if (s12Bg && s21Bg && s21Section) {
+            const rect = s21Section.getBoundingClientRect();
+            const vh = window.innerHeight;
+            // progress = 0 when sec-2-1 is just below the viewport (top at vh)
+            // progress = 1 when sec-2-1 reaches the top of the viewport (top at 0)
+            let progress = 1 - (rect.top / vh);
+            if (progress < 0) progress = 0;
+            if (progress > 1) progress = 1;
+
+            const minOverlayOpacity = 0.2; // keep a floor so the header collage never shows through
+            const s12Opacity = 1 - progress * (1 - minOverlayOpacity);
+            s21Bg.style.opacity = progress.toString();
+            s12Bg.style.opacity = s12Opacity.toString();
+        }
+
+        // Lift sec-2-1 title as sec-2-2 enters
+        const s21Title = document.querySelector('#sec-2-1 .overlay-title');
+        const s22Section = document.getElementById('sec-2-2');
+        if (s21Title && s22Section) {
+            const rect = s22Section.getBoundingClientRect();
+            const vh = window.innerHeight;
+            // progress: 0 when sec-2-2 top is at viewport bottom; 1 when it reaches the top
+            let progress = 1 - (rect.top / vh);
+            if (progress < 0) progress = 0;
+            if (progress > 1) progress = 1;
+            const liftPx = 140; // how far to move up at full progress
+            s21Title.style.transform = `translateY(-${liftPx * progress}px)`;
+        }
     });
 
     // Optional: Resize observer to handle window resizing
@@ -75,4 +108,87 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger scroll event to update positions
         window.dispatchEvent(new Event('scroll'));
     });
+
+    // Before/After parallax wipe effect for sec-3-1
+    window.addEventListener('scroll', () => {
+        // Fade out header collage when scrolling past sec-0-1
+        const headerBg = document.getElementById('header-bg-container');
+        const sec01 = document.getElementById('sec-0-1');
+        if (headerBg && sec01) {
+            const rect = sec01.getBoundingClientRect();
+            const sectionHeight = sec01.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            
+            // We want to fade out as we reach the end of sec-0-1
+            // rect.bottom is the distance from the viewport top to the bottom of the section
+            // When rect.bottom <= viewportHeight, the section is leaving the screen
+            
+            // Let's start fading out when the bottom of the section is 1 viewport height away from the top
+            // i.e., when we are scrolling the last screen of the section.
+            
+            // Actually, simpler: Fade out based on scroll position relative to section end.
+            // When rect.bottom is large (positive), we are seeing the section.
+            // When rect.bottom approaches 0 (or viewportHeight), we are leaving it.
+            
+            // Let's fade out in the last 100vh of the section.
+            const fadeStart = viewportHeight * 2; // Start fading when bottom is 2vh away? No.
+            
+            // Let's use a simple logic:
+            // Opacity = 1 when we are at the top.
+            // Opacity = 0 when we scroll past the section.
+            
+            // Calculate how much of the section is left below the viewport top
+            // rect.bottom
+            
+            // If rect.bottom < viewportHeight, we are scrolling out of it.
+            // Let's fade out over the last viewportHeight distance.
+            
+            let opacity = 1;
+            if (rect.bottom < viewportHeight) {
+                opacity = rect.bottom / viewportHeight;
+            }
+            
+            if (opacity < 0) opacity = 0;
+            if (opacity > 1) opacity = 1;
+            
+            headerBg.style.opacity = opacity;
+            
+            // Also hide it completely if opacity is 0 to avoid painting
+            headerBg.style.visibility = opacity <= 0 ? 'hidden' : 'visible';
+        }
+
+        const wipeOverlay = document.getElementById('sec-3-1-wipe');
+        const s31Section = document.getElementById('sec-3-1');
+        if (wipeOverlay && s31Section) {
+            const rect = s31Section.getBoundingClientRect();
+            const sectionHeight = s31Section.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const scrollDistance = sectionHeight - viewportHeight;
+            
+            // rect.top is 0 when the section hits the top of the viewport.
+            // It becomes negative as we scroll down.
+            // We want the wipe to finish relatively quickly, e.g., after scrolling 1 viewport height.
+            // This allows the rest of the section (which is taller) to be used for scrolling the content overlay.
+            
+            const wipeDistance = viewportHeight; // Wipe completes after 100vh of scrolling
+            let progress = 0;
+            
+            // Calculate progress based on how far we've scrolled past the top
+            // rect.top is positive before we reach it, 0 at top, negative as we scroll past
+            if (rect.top <= 0) {
+                progress = Math.abs(rect.top) / wipeDistance;
+            }
+
+            if (progress < 0) progress = 0;
+            if (progress > 1) progress = 1;
+
+            // Reveal effect: ch2_now is revealed from right to left using clip-path.
+            // inset(0 0 0 X%) -> X goes from 100% (fully hidden) to 0% (fully visible)
+            const clipValue = 100 - (progress * 100); 
+            wipeOverlay.style.clipPath = `inset(0 0 0 ${clipValue}%)`;
+        }
+    });
+
+    // Initialize positions on load
+    window.dispatchEvent(new Event('scroll'));
 });

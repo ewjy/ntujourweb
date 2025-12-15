@@ -8,8 +8,14 @@ body {
     padding: 0;
     font-family: 'Noto Serif TC', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.8rem;
+    line-height: 200%;
     overflow-x: hidden; /* Prevent accidental horizontal scroll on body */
+}
+
+.navbar {
+    font-size: 1.5rem;
+    line-height: 1.25;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,20 +23,27 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
 }
 
+.info-box h1, .info-box h2, .info-box h3, .info-box h4, .info-box h5, .info-box h6 {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.5;
+}
+
 /* Header Styling */
 #intro-header {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 #header-bg-container {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 150%; /* Oversize width to ensure coverage */
     min-height: 150%; /* Oversize height to ensure coverage */
-    z-index: 0;
+    z-index: -1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -47,23 +60,93 @@ h1, h2, h3, h4, h5, h6 {
     margin: 2px; /* Slight spacing for collage effect */
 }
 
-/* Ensure text is readable over the image */
-#intro-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.85); /* Slightly stronger overlay for busy background */
-    z-index: 1;
-}
-
-#intro-header .text-center {
+/* Text box with blurred background */
+#header-text-box {
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    padding: 60px 80px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px);
+    border-radius: 8px;
+    max-width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+}
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
+.mouse {
+    width: 36px;
+    height: 56px;
+    border: 3px solid white;
+    border-radius: 18px;
+    position: relative;
+    margin: 0 auto 12px;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
+}
+
+.wheel {
+    width: 6px;
+    height: 12px;
+    background: white;
+    border-radius: 3px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
+}
+
+@keyframes scroll-wheel {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(12px);
+    }
+}
+
+.arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow span {
+    width: 16px;
+    height: 16px;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin: -8px 0;
+    animation: scroll-arrow 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+@keyframes scroll-arrow {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 /* Chapter Styling */
 .chapter-header {
     position: relative;
@@ -75,7 +158,24 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     width: 100%;
     /* User requested 300vh height for sections to allow "staying" for a period */
-    height: 300vh; 
+    height: 300vh;
+}
+
+/* Extend sec-2-2 height for additional content */
+#sec-2-2, #sec-3-3 {
+    height: 500vh;
+}
+
+#sec-0-1 {
+    background: transparent;
+}
+
+#sec-0-1 .content-overlay {
+    padding-top: 100vh;
+}
+
+#sec-0-1 .content-overlay .info-box:first-child {
+    margin-top: 50vh;
 }
 
 /* Vertical Scroll Section Styling */
@@ -84,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .vertical-scroll .background-visual {
@@ -124,9 +224,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Revised Vertical Scroll Logic */
-.vertical-scroll {
-    /* Allow content to flow */
-}
+/* .vertical-scroll block removed (empty rule cleanup) */
 
 .vertical-scroll .sticky-container {
     /* This acts as the background holder */
@@ -148,18 +246,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .vertical-scroll .content-overlay .info-box {
     pointer-events: auto;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.85);
     margin-bottom: 80vh; /* Spacing between boxes */
+    backdrop-filter: blur(50px);
 }
 .vertical-scroll .content-overlay .info-box:first-child {
     margin-top: 50vh;
 }
 
-
-/* Horizontal Scroll Section Styling */
-.horizontal-scroll {
-    /* Height is defined by .scrolly-section (300vh) */
-}
+/* Horizontal Scroll Section Styling (empty rule removed) */
 
 .horizontal-scroll .sticky-wrapper {
     position: sticky;
@@ -181,4 +276,115 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     flex-shrink: 0;
     box-sizing: border-box;
+}
+
+/* Fade + Overlay Enhancements */
+.fading-bg {
+    transition: opacity 600ms ease;
+}
+
+#sec-2-1 .background-visual {
+    opacity: 0; /* start hidden; fade in on scroll */
+}
+
+#sec-1-2 .background-visual {
+    opacity: 1;
+}
+
+/* Ensure collage never shows through during crossfade */
+#sec-1-2 .sticky-container,
+#sec-2-1 .sticky-container,
+#sec-3-1 .sticky-container {
+    background: white;
+}
+
+.immersive-story {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center children horizontally while stacking */
+}
+
+.story-columns {
+    max-width: 860px;
+    width: 100%;
+    line-height: 2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
+    margin: 0 auto; /* ensure centered when not using flex */
+    text-align: justify;
+}
+
+.story-columns h2 {
+    font-size: 2.2rem;
+}
+
+/* Divider between stacked story columns */
+.story-columns + .story-columns {
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+    margin-top: 6vh;
+    padding-top: 6vh;
+}
+
+.overlay-title {
+    position: sticky;
+    top: 15vh;         /* ~15% from top */
+    margin-left: 15vw; /* ~15% from left */
+    z-index: 2;
+    max-width: 70vw;   /* keep text away from right edge */
+    transition: transform 400ms ease;
+}
+
+/* Handwritten Font */
+.iansui-regular {
+  font-family: "Iansui", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hw{
+  font-family: "Iansui", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 200%;
+}
+
+.black{
+    color: black;
+}
+
+/* Photo Gallery in sec-2-2 */
+.photo-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 85vw;
+    margin: 8vh auto 0;
+    pointer-events: auto;
+}
+
+.photo-item {
+    flex: 1;
+    text-align: center;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.photo-caption {
+    margin-top: 12px;
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Before/After wipe for sec-3-1 */
+.before-after-overlay {
+    transition: clip-path 50ms linear;
+    z-index: 1;
 }

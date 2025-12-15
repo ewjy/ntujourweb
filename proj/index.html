@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>字裡行間的城市記憶——台灣手繪招牌的消逝與重生</title>
+    <title>字裡行間的城市記憶——臺灣手繪招牌的消逝與重生</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- Custom CSS -->
@@ -11,7 +11,7 @@
     <!-- Google Fonts for nice typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iansui&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#chapter-1">誕生</a></li>
                     <li class="nav-item"><a class="nav-link" href="#chapter-2">式微</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#chapter-3">創新</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sec-3-2">創新</a></li>
                     <li class="nav-item"><a class="nav-link" href="#chapter-4">重生</a></li>
                 </ul>
             </div>
@@ -34,34 +34,43 @@
     </nav>
 
     <!-- Header / Intro -->
-    <header id="intro-header" class="vh-100 d-flex align-items-center justify-content-center bg-light">
+    <header id="intro-header" class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="header-bg-container"></div>
-        <div class="text-center">
-            <h1 class="display-1 fw-bold">字裡行間的城市記憶——</h1>
-            <h2 class="display-4 fw-normal">台灣手繪招牌的消逝與重生</h2>
-            <p class="lead">向下滑動，開啟旅程。</p>
-        </div>        
+        <div id="header-text-box" class="text-center">
+            <h1 class="display-1 fw-bold">字裡行間的城市記憶</h1>
+            <h2 class="display-4 fw-normal">臺灣手繪招牌的消逝與重生</h2>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </header>
 
-    <maheader       <!-- Chapter 1 -->
-        <article id="chapter-1" class="chapter">
-            <section class="scrolly-section vertical-scroll" id="sec-0-1">
+        <main> <!-- Chapter 0 -->
+        <article id="chapter-0" class="chapter">
+            <section class="scrolly-section vertical-scroll" id="sec-0-1" style="margin-top: -100vh;">
                 <div class="sticky-container">
-                    <div class="background-visual" style="background-image: url('img/ch0/CH0_openbg.jpg');"></div>
+                    <!-- Empty - inheriting background from header -->
                 </div>
                 <div class="content-overlay container">
                         <div class="row justify-content-center">
-                            <div class="col-md-6">
+                            <div class="col-md-10">
                                 <div class="info-box card p-4 mb-5 shadow">
-                                    <p>還記得上一次是什麼時候，深深望向台灣街道的面貌嗎？</p>
+                                    <p>還記得上一次是什麼時候，深深望向臺灣街道的面貌嗎？</p>
                                     <p>招牌，是一種宣稱「我是誰」的符號。</p>
                                     <p>那麽未來10年的我們，還會記得那些寫繪出屬於臺灣城市面貌的雙手嗎？</p>
-                                    <p>近年「台式美學」與「台灣感性」在國內外設計圈與社群平台掀起熱潮，復古字體、手繪招牌、街邊老字號的溫度，成為品牌與文創追逐的靈感來源。然而，就在這股文化熱潮興起的同時，2024年《都市更新條例》修法後的推動進程，臺灣老舊街區的改建腳步加快，許多承載在地記憶的手繪招牌，也隨著一棟棟老屋的拆除而消失。</p>
+                                    <p>近年「臺式美學」與「臺灣感性」在國內外設計圈與社群平臺掀起熱潮，復古字體、手繪招牌、街邊老字號的溫度，成為品牌與文創追逐的靈感來源。然而，就在這股文化熱潮興起的同時，2024年《都市更新條例》修法後的推動進程，臺灣老舊街區的改建腳步加快，許多承載在地記憶的手繪招牌，也隨著一棟棟老屋的拆除而消失。</p>
                                     <p>手繪字不只是街頭的一道風景，它凝聚了老字師的工藝技術與長年勞動的痕跡，如今卻在更新的浪潮中逐漸淡出，地方語言與生活感在被標準化的視覺中逐漸失語。然而，在另一端，仍有新一代設計師試圖以不同形式延續這份感性，透過再設計、字型重製與文化再生的方式，讓手繪字在當代獲得新的生命。在世代交疊下，兩代人如何延續屬於臺灣的「我是誰」？</p>
                                     <p>我們希望說一場關於「臺灣．字」的故事。</p>
                                     <p>重新思考在「更新」與「保存」之間是否仍有可能並存。</p>
                                     <p style="text-align: center;">
-                                        <b>而你知道......<br>一塊手繪招牌是如何被製作出來的嗎？</b>
+                                        <b>而你知道……<br>一塊手繪招牌是如何被製作出來的嗎？</b>
                                     </p>
                                 </div>
                             </div>
@@ -69,11 +78,7 @@
                     </div>
             </section>
 
-            <div class="chapter-header py-5 text-center bg-dark text-white">
-                <h1>誕生</h1>
-            </div>            
-
-            <!-- Section 1.3: Horizontal Scroll (Last Section of Chapter) -->
+            <!-- Section 1.1: Horizontal Scroll -->
             <section class="scrolly-section horizontal-scroll" id="sec-1-1">
                 <div class="sticky-wrapper">
                     <div class="horizontal-track">
@@ -85,25 +90,25 @@
 
             <section class="scrolly-section vertical-scroll" id="sec-1-2">
                 <div class="sticky-container">
-                    <div class="background-visual" style="background-image: url('img/ch1/CH1_skill.png');"></div>
+                    <div class="background-visual fading-bg" style="background-image: url('img/ch1/CH1_skill.png');"></div>
                     <!-- Title Fixed -->
-                    <div class="position-absolute top-0 end-0 p-5" style="z-index: 2;">
+                    <div class="position-absolute end-0 pe-5" style="z-index: 2; right: 30px; top: 120px;">
                          <h2 class="display-3 fw-bold text-black" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">手繪招牌師傅<span style="color: #ee2331;">兩大</span><span style="color: #1800ad;">必備</span><span style="color: #078246;">技能</span></h2>
                     </div>
                 </div>
-                <div class="content-overlay container-fluid">
+                <div id="sec-1-2-overlay" class="content-overlay container-fluid">
                     <!-- Info Boxes Row -->
                     <div class="row justify-content-center" style="padding-top: 20vh;">
-                        <div class="col-md-3 mx-3">
+                        <div class="col-md-5 mx-3">
                             <div class="info-box card p-4 mb-5 shadow" style="background-color: #e9e9e8;">
                                 <h3 style="text-align: center;"><b>書法</b></h3>
-                                <p>招牌上的字體，師傅們會臨摹「商用字彙」等字帖，練習字形結構、筆畫粗細，讓字體更加端正、美觀。台灣常見的手繪招牌字體多以隸書或楷書為主，可說是台灣的代表字型。</p>
+                                <p>招牌上的字體，師傅們會臨摹「商用字彙」等字帖，練習字形結構、筆畫粗細，讓字體更加端正、美觀。臺灣常見的手繪招牌字體多以隸書或楷書為主，可說是臺灣的代表字型。</p>
                             </div>
                         </div>
-                        <div class="col-md-3 mx-3">
+                        <div class="col-md-5 mx-3">
                             <div class="info-box card p-4 mb-5 shadow" style="background-color: #e9e9e8;">
                                 <h3 style="text-align: center;"><b>素描</b></h3>
-                                <p>早年台灣戲院需要手繪看板，不少師傅除了畫招牌，也畫電影海報，因此就必須掌握精準比例、光影變化與人物輪廓。有些招牌上需加上圖像、插畫，讓整體招牌更具視覺美感。</p>
+                                <p>早年臺灣戲院需要手繪看板，不少師傅除了畫招牌，也畫電影海報，因此就必須掌握精準比例、光影變化與人物輪廓。有些招牌上需加上圖像、插畫，讓整體招牌更具視覺美感。</p>
                             </div>
                         </div>
                     </div>
@@ -114,50 +119,67 @@
 
         <!-- Chapter 2 -->
         <article id="chapter-2" class="chapter">
-            <div class="chapter-header py-5 text-center bg-dark text-white">
-                <h2>Chapter 2: Development</h2>
-            </div>
 
             <section class="scrolly-section vertical-scroll" id="sec-2-1">
                 <div class="sticky-container">
-                    <div class="background-visual" style="background-image: url('https://placehold.co/1920x1080/8e44ad/FFF?text=Chapter+2+Vertical');"></div>
+                    <div class="background-visual fading-bg" style="background-image: url('img/ch1/CH1_liao1.png');"></div>
                 </div>
-                <div class="content-overlay container">
-                        <div class="row justify-content-end">
-                            <div class="col-md-5">
-                                <div class="info-box card p-4 mb-5 shadow">
-                                    <h3>Chapter 2 Begins</h3>
-                                    <p>New theme, new visuals.</p>
-                                </div>
-                                <div class="info-box card p-4 mb-5 shadow">
-                                    <h3>Details</h3>
-                                    <p>More scrolling content here.</p>
-                                </div>
-                            </div>
-                        </div>
+                <div id="sec-2-1-overlay" class="content-overlay container-fluid">
+                    <div class="overlay-title">
+                        <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">產業變遷下的縮影<br>一位招牌老師傅的退場</h2>
+                        <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——手繪招牌師傅 廖文宏</h3>
                     </div>
+                </div>
             </section>
 
-            <!-- Section 2.2: Horizontal Scroll (Last Section) -->
-            <section class="scrolly-section horizontal-scroll" id="sec-2-2">
+            <section class="scrolly-section vertical-scroll" id="sec-2-2">
+                <div class="sticky-container">
+                    <div class="background-visual fading-bg" style="background-color: #666666;"></div>
+                </div>
+                <div id="sec-2-2-overlay" class="content-overlay container-fluid immersive-story text-white" style="padding-top: 25vh;">
+                    <div class="story-columns hw">                        
+                        <p>然而隨著時代演變，台灣的手繪招牌師傅大多年事已高，不再執筆或已離世。</p>
+                        <p>台北市的中心廣告社，是見證這段技藝歷史的據點之一。中心廣告社創立至今，已陪伴城市走過半個世紀，見證從台灣店家招牌美學的變化。負責人廖文宏師傅今年已逾七十，最早以「手繪」維生，然而隨著電腦割字、大圖輸出的普及，他也做出其他選擇……</p>
+                        <p>儘管如此，中心廣告社的存在，仍見證手繪技藝的輝煌年代，店面雖然不起眼，卻承載一代匠人的美學、技藝與生活記憶，而這門工藝，成了台灣城市景觀變遷中，逐漸被忽視的角色。</p>
+                    </div>
+                    <div class="story-columns">
+                        <p>廖文宏出生於台中，在那個以讀書翻身的年代，他卻難以掌握書本上的知識，國中時甚至被貼上「不良學生」、「太保」的標籤。但幸運的是，從事戲劇佈景工作的師父仍願意給15歲的廖文宏一個機會，他成為學徒，從沒有薪水的打雜工作開始做起，在師父身邊慢慢觀察、學習手藝，幾年後熬過學徒生活、成功出師。結束學徒的那天，師父送給他一盒畫筆，成了他踏入廣告人生的第一筆資產。</p>
+                        <p>帶著這盒畫筆，廖文宏離開故鄉台中，北上到新竹、台北闖蕩。早期的他沒有資本，店面與裁縫社共用，甚至連接單的電話都是跟其他店家借，從最基礎的吊招牌、做鐵架開始他的廣告人生。</p>
+                        <p>後來廖文宏進入軍隊服役，不如外界所想像的痛苦，當長官得知他「是做廣告的」，立刻指派他成為<b><u>營區裡的畫師</u></b>，從營區壁畫、國防標語到迎接高階長官視察的大型海報都成為他的工作，甚至因此獲得一般人沒有的假期。廖文宏憑藉自己的手藝，一路從連上畫到營上，從營上畫到軍部，成為他的軍旅寫照。</p>
+                    </div>
+                    
+                    <!-- Photo Gallery -->
+                    <div class="photo-gallery">
+                        <div class="photo-item">
+                            <img src="img/ch1/CH1_liao2.jpg" alt="廖文宏師傅" class="img-fluid">
+                            <p class="photo-caption">中心廣告社廖文宏師傅。<br>攝／王浚耀</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/ch1/CH1_liao3.jpg" alt="中心廣告社" class="img-fluid">
+                            <p class="photo-caption">中心廣告社現在不只做手繪招牌。<br>攝／王浚耀</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/ch1/CH1_liao4.jpg" alt="傳統竹尺" class="img-fluid">
+                            <p class="photo-caption">竹尺是招牌師傅的重要工具，現已停產。<br>攝／王浚耀</p>
+                        </div>
+                    </div>
+
+                    <div class="story-columns">
+                        <p>退伍後，廖文宏用5000元的積蓄，在台北市華陰街創立「中心廣告社」。創業的當下，是<b><u>台灣手繪廣告看板蓬勃發展的年代</u></b>，當時沒有數位科技的協助，街上新開的店家招牌、政府的政令宣導海報、即將上映的電影看板，都需要擁有手藝的師傅手工繪製。那是一個城市被人手打造、被筆觸渲染的年代，而廖文宏就是其中的一份子。</p>
+                        <p>那時的招牌師傅可不只是安安靜靜坐著畫畫，反而要成為「通才」：除了最基本的寫字、畫畫，可能還要會雕刻、木工，甚至要有膽量爬高掛招牌。一塊招牌從切割、打稿、調色到豎立在店門口，<b><u>幾乎都是廣告師傅一手包辦。</u></b></p>
+                        <p>然而，科技浪潮隨之而來，電腦刻字、大圖輸出進入廣告市場後，其速度、成本遠遠勝過手繪技藝，手繪招牌逐漸被市場邊緣化。</p>
+                        <p>中心廣告社也因應時代潮流、擁抱新技術，從原先做手繪生意轉向電腦化流程。他坦言，<b><u>手繪技法的消逝固然可惜，但人還是需要順著社會走，為了生活仍須作出轉變。</u></b></p>
+                        <p>如今，廖文宏的畫筆早已丟棄，如同產業縮影——曾經輝煌，但也黯淡了。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2.3: Horizontal Scroll -->
+            <section class="scrolly-section horizontal-scroll" id="sec-2-3">
                 <div class="sticky-wrapper">
                     <div class="horizontal-track">
-                        <div class="h-panel d-flex align-items-center justify-content-center" style="background-color: #e74c3c; color: white;">
-                            <div class="p-5">
-                                <h3>Chapter 2 Finale - Slide 1</h3>
-                            </div>
-                        </div>
-                        <div class="h-panel d-flex align-items-center justify-content-center" style="background-color: #c0392b; color: white;">
-                            <div class="p-5">
-                                <img src="https://placehold.co/600x400" alt="Placeholder" class="img-fluid rounded shadow">
-                                <p class="mt-3">Images can be included too.</p>
-                            </div>
-                        </div>
-                        <div class="h-panel d-flex align-items-center justify-content-center" style="background-color: #a93226; color: white;">
-                            <div class="p-5">
-                                <h3>End of Chapter 2</h3>
-                            </div>
-                        </div>
+                        <!-- Horizontal Banner Image -->
+                        <img src="img/ch2/CH2_banner.png" alt="Chapter 1 Banner" style="height: 100vh; width: auto; max-width: none;">                    
                     </div>
                 </div>
             </section>
@@ -165,45 +187,57 @@
 
         <!-- Chapter 3 -->
         <article id="chapter-3" class="chapter">
-            <div class="chapter-header py-5 text-center bg-dark text-white">
-                <h2>Chapter 3: Climax</h2>
-            </div>
 
-            <section class="scrolly-section vertical-scroll" id="sec-3-1">
+            <section class="scrolly-section vertical-scroll" id="sec-3-1" style="height: 400vh;">
                 <div class="sticky-container">
-                    <div class="background-visual" style="background-image: url('https://placehold.co/1920x1080/d35400/FFF?text=Chapter+3+Vertical');"></div>
+                    <!-- Before/After images as direct children -->
+                    <img src="img/ch2/CH2_before.png" alt="Before" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                    <img id="sec-3-1-wipe" src="img/ch2/CH2_now.jpg" alt="After" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; clip-path: inset(0 0 0 100%); will-change: clip-path;">
                 </div>
                 <div class="content-overlay container">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <div class="info-box card p-4 mb-5 shadow text-center">
-                                    <h3>Centered Content</h3>
-                                    <p>Focus on the center.</p>
-                                </div>
+                    <div style="height: 100vh;"></div> <!-- Spacer for wipe effect -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="info-box card p-4 mb-5 shadow" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); color: white;">
+                                <h1>當「傳統」工法受到衝擊<br>「新興」世代如何為斷層搭橋？</h1>
+                                <p>近30年來，隨著經濟發展和人口向都市集中，臺灣的城市開始快速擴張和發展。從過去的低矮房舍轉變為現代化的高樓大廈，標準化尺寸、制式字體與壓克力燈箱，確實讓街景變得整齊、安全性也提高，但代價之一，是大量手繪招牌在短時間內消失。當這份以效率、安全、美觀為主的政策與商業邏輯，在制度設計與成本考量下，手繪招牌正被排除出主流商業空間，受到了邊緣化的挑戰。然而，技藝逐漸退場時，新興時代重新將其拉回光線下。近十年，臺灣興起一波以「懷舊」、「復古」的「台灣感性（韓語：대만감성）」掀起熱潮，成為一種國際間可被命名的在地美學。</p>
+                                <p>這股拾起懷舊的風潮，讓傳統技藝從「上一代的記憶」轉為「下一代可以實際運用的資源」。在台灣，有一群年輕人選擇不是只「紀念」傳統，而是把它當成一種可以重新設計的語言，他們開酒吧、畫招牌、做文創，嘗試在當代的語境裡，替老東西找到新位置。</p>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            
+            <section class="scrolly-section vertical-scroll" id="sec-3-2">
+                <div class="sticky-container">
+                    <div class="background-visual fading-bg" style="background-image: url('img/ch3/ch3_learnbar_01.jpg');"></div>
+                </div>
+                <div id="sec-3-2-overlay" class="content-overlay container-fluid">
+                    <div class="overlay-title">
+                        <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">掛上一塊手寫的溫度<br>在城市點綴台灣味</h2>
+                        <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——Learn Bar 學吧創辦人 Clive</h3>
+                    </div>
+                </div>
             </section>
 
-            <!-- Section 3.2: Horizontal Scroll -->
-            <section class="scrolly-section horizontal-scroll" id="sec-3-2">
-                <div class="sticky-wrapper">
-                    <div class="horizontal-track">
-                        <div class="h-panel d-flex align-items-center justify-content-center bg-warning text-dark">
-                            <div class="p-5">
-                                <h3>Chapter 3 Horizontal 1</h3>
-                            </div>
-                        </div>
-                        <div class="h-panel d-flex align-items-center justify-content-center bg-secondary text-white">
-                            <div class="p-5">
-                                <h3>Chapter 3 Horizontal 2</h3>
-                            </div>
-                        </div>
-                        <div class="h-panel d-flex align-items-center justify-content-center bg-dark text-white">
-                            <div class="p-5">
-                                <h3>Chapter 3 Horizontal 3</h3>
-                            </div>
-                        </div>
+            <section class="scrolly-section vertical-scroll" id="sec-3-3">
+                <div class="sticky-container">
+                    <div class="background-visual" style="background-color: #fffae4;"></div>
+                </div>
+                <div id="sec-3-3-overlay" class="content-overlay container-fluid immersive-story text-white" style="padding-top: 25vh;">
+                    <div class="story-columns hw black">                        
+                        <p style="text-align: left;">「將台灣手繪融入裝設，形塑是一個有溫度的空間」</p>
+                        <p style="text-align: right;">—— Learn Bar 學吧創辦人 Clive</p>
+                        <p>在台北市中正區的街道上，高樓大廈縱橫排列，一間掛著手繪招牌的酒吧屹立於城市之中，並非顯得格外醒目，但存在著不同尋常的恆溫溫度。走進一看，這是一間保留臺灣手繪技藝的酒吧——Learn Bar 學吧。</p>            
+                    </div>
+                    <div class="story-columns black">
+                        <p>Learn Bar 學吧為一間專售台灣精釀啤酒的酒吧，其裝潢風格與內置與大眾對於「酒吧」霓虹、酒綠與昏暗交雜的氛圍截然不同，明亮的暖色調燈光、溫馨的桌椅配置、色彩繽紛且精緻的菜單與壁畫，體現了酒吧創辦人 Clive 對於台灣飲酒產業的期許，讓飲酒文化不再侷限於空間與距離，而是創造一種足以開放心胸、任人皆足以釋放壓力的歸屬，試圖顛覆傳統上酒吧所代表的距離感與排他性，讓顧客可以帶家人、寵物、朋友一同前至，享受輕鬆的社交體驗。</p>                        
+                        <img src="img/ch3/ch3_learnbar_02.jpg" alt="Learn Bar Interior" class="img-fluid mt-3" style="width: 100%; height: auto;">
+                        <p class="photo-caption" style="color: black; text-align: center;">Learn Bar 學吧店面前的手繪招牌。<br>攝／許巧昕</p>
+                    </div>
+                    <div class="story-columns black">
+                        <p>Clive 期許將「台灣」味道放大融入酒吧經營，呼應對於台灣傳統文化親和、人情、溫暖的調性，拉近人與空間的距離。因此，在一間店家最重要的「招牌」決策中，他毅然決然以傳統取代現代，邀請台灣手繪招牌老職人下筆，因緣際會之下尋得已封筆多年的廖師傅為這份創業精神，保留手繪當下的創業熱忱與初衷。</p>
+                        <p>Learn Bar 學吧的招牌仍向陽地懸掛於中正區的一隅，手工筆觸、略微不平整的線條、暖色系的顏料，讓 Learn Bar 成為了將台灣在地文化與故事傳遞出去的推手。曾經我們認為，手繪招牌與店家是勢必存然，但如今，該搭配組合已然消逝於這座城市之中。然而，Learn Bar 學吧並非是消逝中的僅存，而是這份僅存的延續與起點，延續台灣傳統生活感的象徵。</p>
                     </div>
                 </div>
             </section>
@@ -211,9 +245,6 @@
 
         <!-- Chapter 4 -->
         <article id="chapter-4" class="chapter">
-            <div class="chapter-header py-5 text-center bg-dark text-white">
-                <h2>Chapter 4: Resolution</h2>
-            </div>
 
             <section class="scrolly-section vertical-scroll" id="sec-4-1">
                 <div class="sticky-container">
