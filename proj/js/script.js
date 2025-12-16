@@ -101,6 +101,84 @@ document.addEventListener('DOMContentLoaded', () => {
             const liftPx = 140; // how far to move up at full progress
             s21Title.style.transform = `translateY(-${liftPx * progress}px)`;
         }
+
+        // Flying cards for Chapter 4 (sec-4-3, sec-4-4, sec-4-5)
+        const flySections = [
+            { id: 'sec-4-3', cards: ['sec-4-3-card'] },
+            { id: 'sec-4-4', cards: ['sec-4-4-card', 'sec-4-4-card-2'] },
+            { id: 'sec-4-5', cards: ['sec-4-5-card'] }
+        ];
+
+        flySections.forEach(sectionData => {
+            const section = document.getElementById(sectionData.id);
+            if (!section) return;
+
+            const cardIds = sectionData.cards;
+            const cards = cardIds.map(id => document.getElementById(id)).filter(c => c);
+            
+            if (cards.length === 0) return;
+
+            const scrollY = window.scrollY;
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const vh = window.innerHeight;
+            
+            const scrollDistance = sectionHeight - vh;
+            let scrollTopInSection = scrollY - sectionTop;
+            
+            if (scrollTopInSection < 0) scrollTopInSection = 0;
+            if (scrollTopInSection > scrollDistance) scrollTopInSection = scrollDistance;
+            
+            const progress = scrollDistance > 0 ? scrollTopInSection / scrollDistance : 0;
+
+            // If single card, use full progress (0-1)
+            // If multiple cards, split progress evenly
+            const segmentSize = 1 / cards.length;
+
+            cards.forEach((card, index) => {
+                // Calculate local progress for this card's segment
+                const segmentStart = index * segmentSize;
+                const segmentEnd = (index + 1) * segmentSize;
+                
+                let localProgress = 0;
+                if (progress < segmentStart) {
+                    localProgress = 0;
+                } else if (progress > segmentEnd) {
+                    localProgress = 1;
+                } else {
+                    localProgress = (progress - segmentStart) / segmentSize;
+                }
+
+                // Continuous movement: 100vh (bottom) -> -100vh (top/out)
+                // Only animate if we are somewhat near the active segment to save resources?
+                // Actually, we want them to stay off-screen if not active.
+                
+                // If localProgress is 0, it should be at startY (100vh)
+                // If localProgress is 1, it should be at endY (-100vh)
+                
+                const startY = 100;
+                const endY = -100;
+                const y = startY + (endY - startY) * localProgress;
+
+                card.style.transform = `translateY(${y}vh)`;
+                
+                // Fade in/out logic
+                let opacity = 1;
+                if (localProgress < 0.1) {
+                    opacity = localProgress / 0.1;
+                } else if (localProgress > 0.9) {
+                    opacity = 1 - (localProgress - 0.9) / 0.1;
+                }
+                
+                // If completely finished (localProgress === 1) or not started (localProgress === 0), 
+                // ensure opacity is 0 to hide it (unless it's just entering/leaving)
+                if (localProgress <= 0 || localProgress >= 1) {
+                    opacity = 0;
+                }
+
+                card.style.opacity = opacity.toString();
+            });
+        });
     });
 
     // Optional: Resize observer to handle window resizing
@@ -188,6 +266,87 @@ document.addEventListener('DOMContentLoaded', () => {
             wipeOverlay.style.clipPath = `inset(0 0 0 ${clipValue}%)`;
         }
     });
+
+    // Slideshow functionality for sec-3-3
+    const slideshowImages = [
+        'img/ch3/ch3_learnbar_03.jpg',
+        'img/ch3/ch3_learnbar_04.jpg',
+        'img/ch3/ch3_learnbar_05.jpg',
+    ];
+    
+    let currentSlideIndex = 0;
+    let slideshowInterval;
+    const slideshowImg = document.getElementById('slideshow-img');
+    
+    if (slideshowImg) {
+        function updateSlideshow() {
+            // Fade out
+            slideshowImg.style.opacity = '0';
+            
+            // Change image after fade out
+            setTimeout(() => {
+                slideshowImg.src = slideshowImages[currentSlideIndex];
+                // Fade in
+                slideshowImg.style.opacity = '1';
+            }, 400);
+        }
+        
+        function autoPlaySlideshow() {
+            currentSlideIndex = (currentSlideIndex + 1) % slideshowImages.length;
+            updateSlideshow();
+        }
+        
+        // Initialize with first image
+        slideshowImg.style.opacity = '1';
+        slideshowImg.src = slideshowImages[0];
+        
+        // Start auto-play with 3 second interval
+        slideshowInterval = setInterval(autoPlaySlideshow, 3000);
+    }
+
+    // Typewriter Effect Observer
+    const typewriterElements = document.querySelectorAll('.typewriter');
+    if (typewriterElements.length >= 2) {
+        const firstLine = typewriterElements[0];
+        const secondLine = typewriterElements[1];
+
+        // When first line finishes typing, trigger the second line
+        firstLine.addEventListener('animationend', (e) => {
+            if (e.animationName === 'typing') {
+                secondLine.classList.add('active');
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Start the first line
+                    firstLine.classList.add('active');
+                    // Reset second line so it waits for the trigger
+                    secondLine.classList.remove('active');
+                } else {
+                    // Reset both when scrolling away
+                    firstLine.classList.remove('active');
+                    secondLine.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe the first line to trigger the sequence
+        observer.observe(firstLine);
+    }
+
+    // Generic Fade In Observer
+    const fadeElements = document.querySelectorAll('.fade-in-element');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
 
     // Initialize positions on load
     window.dispatchEvent(new Event('scroll'));

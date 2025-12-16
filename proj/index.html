@@ -28,6 +28,8 @@
                     <li class="nav-item"><a class="nav-link" href="#chapter-2">式微</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sec-3-2">創新</a></li>
                     <li class="nav-item"><a class="nav-link" href="#chapter-4">重生</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chapter-5">活化</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chapter-6">傳承</a></li>
                 </ul>
             </div>
         </div>
@@ -37,8 +39,7 @@
     <header id="intro-header" class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="header-bg-container"></div>
         <div id="header-text-box" class="text-center">
-            <h1 class="display-1 fw-bold">字裡行間的城市記憶</h1>
-            <h2 class="display-4 fw-normal">臺灣手繪招牌的消逝與重生</h2>
+            <img src="img/ch0/title.svg" alt="字裡行間的城市記憶——臺灣手繪招牌的消逝與重生" style="width: 100%; height: auto;">
         </div>
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
@@ -54,7 +55,7 @@
 
         <main> <!-- Chapter 0 -->
         <article id="chapter-0" class="chapter">
-            <section class="scrolly-section vertical-scroll" id="sec-0-1" style="margin-top: -100vh;">
+            <section class="scrolly-section vertical-scroll" id="sec-0-1" style="margin-top: -100vh; overflow: hidden;">
                 <div class="sticky-container">
                     <!-- Empty - inheriting background from header -->
                 </div>
@@ -79,11 +80,11 @@
             </section>
 
             <!-- Section 1.1: Horizontal Scroll -->
-            <section class="scrolly-section horizontal-scroll" id="sec-1-1">
-                <div class="sticky-wrapper">
-                    <div class="horizontal-track">
+            <section class="scrolly-section horizontal-scroll" id="sec-1-1" style="padding: 0; margin: 0; background-color: #000;">
+                <div class="sticky-wrapper" style="top: 0; height: 100vh; width: 100%; overflow: hidden;">
+                    <div class="horizontal-track" style="display: flex; height: 100vh; width: max-content; margin: 0; padding: 0;">
                         <!-- Horizontal Banner Image -->
-                        <img src="img/ch1/CH1_banner.png" alt="Chapter 1 Banner" style="height: 100vh; width: auto; max-width: none;">                    
+                        <img src="img/ch1/CH1_banner.png" alt="Chapter 1 Banner" style="height: 100vh; width: auto; max-width: none; display: block; margin: 0; vertical-align: top; object-fit: cover;">                    
                     </div>
                 </div>
             </section>
@@ -120,11 +121,11 @@
         <!-- Chapter 2 -->
         <article id="chapter-2" class="chapter">
 
-            <section class="scrolly-section vertical-scroll" id="sec-2-1">
+            <section class="scrolly-section vertical-scroll" id="sec-2-1" style="height: 200vh;">
                 <div class="sticky-container">
-                    <div class="background-visual fading-bg" style="background-image: url('img/ch1/CH1_liao1.png');"></div>
+                    <div class="background-visual fading-bg" style="background-image: url('img/ch1/CH1_liao1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 100vh;"></div>
                 </div>
-                <div id="sec-2-1-overlay" class="content-overlay container-fluid">
+                <div id="sec-2-1-overlay" class="content-overlay container-fluid" style="min-height: 200vh;">
                     <div class="overlay-title">
                         <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">產業變遷下的縮影<br>一位招牌老師傅的退場</h2>
                         <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——手繪招牌師傅 廖文宏</h3>
@@ -208,11 +209,11 @@
                 </div>
             </section>
             
-            <section class="scrolly-section vertical-scroll" id="sec-3-2">
+            <section class="scrolly-section vertical-scroll" id="sec-3-2" style="height: 200vh;">
                 <div class="sticky-container">
                     <div class="background-visual fading-bg" style="background-image: url('img/ch3/ch3_learnbar_01.jpg');"></div>
                 </div>
-                <div id="sec-3-2-overlay" class="content-overlay container-fluid">
+                <div id="sec-3-2-overlay" class="content-overlay container-fluid" style="min-height: 200vh;">
                     <div class="overlay-title">
                         <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">掛上一塊手寫的溫度<br>在城市點綴台灣味</h2>
                         <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——Learn Bar 學吧創辦人 Clive</h3>
@@ -226,9 +227,13 @@
                 </div>
                 <div id="sec-3-3-overlay" class="content-overlay container-fluid immersive-story text-white" style="padding-top: 25vh;">
                     <div class="story-columns hw black">                        
-                        <p style="text-align: left;">「將台灣手繪融入裝設，形塑是一個有溫度的空間」</p>
-                        <p style="text-align: right;">—— Learn Bar 學吧創辦人 Clive</p>
-                        <p>在台北市中正區的街道上，高樓大廈縱橫排列，一間掛著手繪招牌的酒吧屹立於城市之中，並非顯得格外醒目，但存在著不同尋常的恆溫溫度。走進一看，這是一間保留臺灣手繪技藝的酒吧——Learn Bar 學吧。</p>            
+                        <div style="text-align: left; margin-bottom: 1rem;">
+                            <p class="typewriter">「將台灣手繪融入裝設，形塑是一個有溫度的空間」</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <p class="typewriter">—— Learn Bar 學吧創辦人 Clive</p>
+                        </div>
+                        <p style="margin-top: 5vh;">在台北市中正區的街道上，高樓大廈縱橫排列，一間掛著手繪招牌的酒吧屹立於城市之中，並非顯得格外醒目，但存在著不同尋常的恆溫溫度。走進一看，這是一間保留臺灣手繪技藝的酒吧——Learn Bar 學吧。</p>            
                     </div>
                     <div class="story-columns black">
                         <p>Learn Bar 學吧為一間專售台灣精釀啤酒的酒吧，其裝潢風格與內置與大眾對於「酒吧」霓虹、酒綠與昏暗交雜的氛圍截然不同，明亮的暖色調燈光、溫馨的桌椅配置、色彩繽紛且精緻的菜單與壁畫，體現了酒吧創辦人 Clive 對於台灣飲酒產業的期許，讓飲酒文化不再侷限於空間與距離，而是創造一種足以開放心胸、任人皆足以釋放壓力的歸屬，試圖顛覆傳統上酒吧所代表的距離感與排他性，讓顧客可以帶家人、寵物、朋友一同前至，享受輕鬆的社交體驗。</p>                        
@@ -238,6 +243,16 @@
                     <div class="story-columns black">
                         <p>Clive 期許將「台灣」味道放大融入酒吧經營，呼應對於台灣傳統文化親和、人情、溫暖的調性，拉近人與空間的距離。因此，在一間店家最重要的「招牌」決策中，他毅然決然以傳統取代現代，邀請台灣手繪招牌老職人下筆，因緣際會之下尋得已封筆多年的廖師傅為這份創業精神，保留手繪當下的創業熱忱與初衷。</p>
                         <p>Learn Bar 學吧的招牌仍向陽地懸掛於中正區的一隅，手工筆觸、略微不平整的線條、暖色系的顏料，讓 Learn Bar 成為了將台灣在地文化與故事傳遞出去的推手。曾經我們認為，手繪招牌與店家是勢必存然，但如今，該搭配組合已然消逝於這座城市之中。然而，Learn Bar 學吧並非是消逝中的僅存，而是這份僅存的延續與起點，延續台灣傳統生活感的象徵。</p>
+                        
+                        <!-- Slideshow -->
+                        <div class="slideshow-container mt-4" style="position: relative; width: 100%; background: #000;">
+                            <div class="slideshow-wrapper" style="position: relative; overflow: hidden; width: 100%; padding-bottom: 75%; height: 0;">
+                                <img id="slideshow-img" src="img/ch3/ch3_learnbar_03.jpg" alt="Slideshow" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                        <p>資訊：Learn Bar 學吧精釀
+                            <br>地址：臺北市中正區信義路二段253號1樓
+                            <br>電話：02-2396-6818</p>
                     </div>
                 </div>
             </section>
@@ -246,45 +261,163 @@
         <!-- Chapter 4 -->
         <article id="chapter-4" class="chapter">
 
-            <section class="scrolly-section vertical-scroll" id="sec-4-1">
+            <section class="scrolly-section vertical-scroll" id="sec-4-1" style="height: 200vh;">
                 <div class="sticky-container">
-                    <div class="background-visual" style="background-image: url('https://placehold.co/1920x1080/16a085/FFF?text=Chapter+4+Vertical');"></div>
+                    <div class="background-visual fading-bg" style="background-image: url('img/ch3/ch3_kingson_01.jpg');"></div>
                 </div>
-                <div class="content-overlay container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="info-box card p-4 mb-5 shadow">
-                                    <h3>Wrapping Up</h3>
-                                    <p>The final chapter.</p>
+                <div id="sec-4-1-overlay" class="content-overlay container-fluid" style="min-height: 200vh;">
+                    <div class="overlay-title">
+                        <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">用雙手勾勒出，<br>屬於台灣字體新世代的輪廓</h2>
+                        <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——手繪藝術家 Kingson</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scrolly-section vertical-scroll" id="sec-4-2" style="height: 100vh; position: sticky; top: 0;">
+                <div class="sticky-container">
+                    <div class="background-visual" style="background-color: #fffae4;"></div>
+                </div>
+                <div id="sec-4-2-overlay" class="content-overlay container-fluid immersive-story text-white" style="padding-top: 25vh; min-height: 100vh;">
+                    <div class="story-columns hw black">
+                        <p>在數位輸出與LED招牌已成主流的今天，手繪不再成為一種必須。儘管如此，仍有新一代將其視為人生重心，繼續用畫筆融入新興世代的觀點，延續這份傳統技藝。</p>
+                        <p>手繪藝術師 Kingson，是一位以手繪字為核心創作、專注於招牌與標識的藝術家。「以無法為有法，以無限為有限。」這句話是 Kingson 深受李小龍哲學啟發而採用的理念。對他合作的店家而言，手繪招牌不是開店流程的一個項目，而是一個「一定想要完成」的環節。King­son 形容，會來找他的老闆，往往是在對自家品牌有信心之後，才決定投資一個「可以陪店一起老去」的作，即使沒有人敢說自己一定能開一百年，但他們希望招牌本身，能具備那種可以撐很久、越舊越好看的質感。</p>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Section 4.3: Full Page with Flying Card -->
+            <section class="scrolly-section vertical-scroll" id="sec-4-3" style="height: 500vh;">
+                <div class="sticky-container">
+                    <div class="background-visual" style="background-image: url('img/ch3/ch3_kingson_02.jpg');"></div>
+                    <div id="sec-4-3-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p>手繪招牌之所以有價值，在於體現了真實和自然的質感，他會故意保留漆的筆觸與某些瑕疵，追求「功力出來的樣貌」，因為這才是手繪獨一無二的意義。因此，承接當下的復古潮，仍有店家期待以手繪呈現理念，仍有店家在開店或改裝時，主動尋找 Kingson 合作。手繪招牌在開店預算表裡，多半不在最前面，但 King­son 發現，那些最後仍決定找他合作的店家，有幾個明顯共同點。</p>
+                    </div>
+                </div>
+                <div class="content-overlay container-fluid" style="min-height: 500vh; pointer-events: none;">
+                </div>
+            </section>
+
+            <section class="scrolly-section vertical-scroll" id="sec-4-4" style="height: 500vh;">
+                <div class="sticky-container">
+                    <div class="background-visual" style="background-image: url('img/ch3/ch3_kingson_03.jpg');"></div>
+                    <div id="sec-4-4-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p>首先，他們將手繪招牌當成創業歷程中的一個里程碑，很多老闆在還沒開店之前，就對某一種手寫字體或某面老招牌留下深刻印象。等到真正輪到自己要掛上第一塊招牌時，手繪字就成了「這次一定要做」的選擇。這並非一種功能上的必要，而是對自己一路走到這裡的一種紀念與完成。對他們而言，請一位字體藝術家來「寫出」店名，是把情感與理想具體長在牆上的過程。</p>
+                    </div>
+                    <div id="sec-4-4-card-2" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p>其次，他們希望用字體說明自己的風格與品味，在同一條街上，LED、噴繪、貼紙招牌的視覺往往趨於一致。選擇手繪招牌的店，多半不只是想「看起來不一樣」，而是希望用字體本身去傳達店的性格，手繪字因此成為了一種模板無法取代的品味與立場宣示。</p>
+                    </div>
+                </div>
+                <div class="content-overlay container-fluid" style="min-height: 500vh; pointer-events: none;">
+                </div>
+            </section>
+
+            <section class="scrolly-section vertical-scroll" id="sec-4-5" style="height: 500vh;">
+                <div class="sticky-container">
+                    <div class="background-visual" style="background-image: url('img/ch3/ch3_kingson_04.jpg');"></div>
+                    <div id="sec-4-5-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p>再者，是來自店家對於經營穩定度的自信，剛開店時，許多人會暫時選擇較低成本的招牌方案，等營運穩定後再升級門面。反而是開店三到五年、對品牌有一定把握的店家，更願意花錢請字體藝術家重新寫一塊招牌。</p>
+                    </div>
+                </div>
+                <div class="content-overlay container-fluid" style="min-height: 500vh; pointer-events: none;">
+                </div>
+            </section>            
+
+            <section class="scrolly-section" id="sec-4-6" style="height: auto; background-color: #fffae4;">
+                <div id="sec-4-6-overlay" class="container-fluid immersive-story text-white" style="padding-top: 15vh; padding-bottom: 15vh;">
+                    <div class="story-columns black">
+                        <p>Kingson 自小熱愛畫畫與創作，畢業於文化建築相關科系，在進入藝術領域之前，他曾任職於公務機關近五年。然而，對於藝術創作的熱愛，令其下定決心地跳脫體制枷鎖，辭去公務員的工作，毅然決然地前至臺北成為油漆學徒。在當學徒的兩年期間，Kingson 開始學習油漆彩繪相關的技法，如噴漆、拉線等技法。它曾將字體刺青師視為理想目標，字，是主角，而線條與色塊，是字體的延伸設計。於是決定將練習重點放在文字上，他每天練習各種字體，包括鋼筆字、硬筆與軟筆，從而正式開啟了他的文字創作之路。他的字體風格並非單一體系，而是融會貫通的成果，涵蓋了童年時期被父親逼著學習的書法、青春期接觸的塗鴉字體，以及後來所學的刺青字體和招牌彩繪技法，找到了將東方書法底蘊與西方手繪技藝融會貫通的道路。</p>
+                        <p>儘管身處現代，Kingson 在工序上依然選擇往回走，刻意維持老一輩師傅留下來的方式，堅持使用傳統且費時的工法，極度理性地要求自己親自打稿、轉繪、塗繪。因為即便傳統技法雖然「老」，但在許多方面是無可取代的。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4.7: Full Page Image -->
+            <section class="scrolly-section" id="sec-4-7" style="height: auto;">
+                <div style="width: 100%;">
+                    <img src="img/ch3/ch3_kingson_05.jpg" alt="Full Width Image" style="width: 100%; height: auto; display: block;">
+                </div>
+            </section>
+
+            <!-- Quote Section -->
+            <section class="scrolly-section d-flex align-items-center justify-content-center" style="height: 50vh; background-color: #fffae4;">
+                <div class="fade-in-element text-center p-5">
+                    <h3 class="display-6 fw-bold hw" style="color: #333; line-height: 1.6; font-size: 1.8rem;">
+                        「傳統技法雖然老跟笨， 但是其實它幾乎無可取代。」
+                    </h3>
+                    <p>——字體藝術家 Kingson</p>
+                </div>
+            </section>
+
+            <section class="scrolly-section" id="sec-4-8" style="height: auto;">
+                <div style="width: 100%;">
+                    <img src="img/ch3/ch3_kingson_06.jpg" alt="Full Width Image" style="width: 100%; height: auto; display: block;">
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+            <section class="scrolly-section timeline-section" id="sec-4-9" style="height: auto;">
+                <div class="container">
+                    <div class="mb-5 fade-in-element" style="max-width: 800px; margin: 0 auto; padding-left: 20px;">
+                        <h2 class="display-7 fw-bold mb-3">手繪藝術家 Kingson 如何站在傳統工法上，
+                            <br>創作出自己的風格？</h2>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline-block fade-in-element">
+                            <h3 class="timeline-title">秘訣一：用格線跟字體本，讓字站穩在畫板上</h3>
+                            <p class="timeline-desc">
+                                在打稿階段，他依然會參考傳統的商用字體本，先用格線把字的架構穩住，再進行手寫調整。這一做法沿襲的是過去招牌師傅的邏輯：即便不擅長書法，只要理解字體結構，就能把字寫得端正、耐看。面對大型鐵板招牌，他會用傳統「轉繪紙」，先在紙上畫好字，打洞，貼到招牌上，再用粉拍出淡淡的字形輪廓。等真正下筆時，這些粉線會成為參考，而不會干擾油漆附著。
+                            </p>
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <img src="img/ch3/ch3_kingson_07.jpg" class="img-fluid rounded shadow-sm" alt="Kingson 參考字體本">
+                                    <p class="text-muted small mt-2">商用字體本為傳統手繪職人皆有的教科書，作為台灣常用字體（分書、楷書與隸書）的模板。<br>攝／許容榕</p>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <img src="img/ch3/ch3_kingson_08.jpg" class="img-fluid rounded shadow-sm" alt="轉繪紙打稿">
+                                    <p class="text-muted small mt-2">手繪職人打稿後，會將於草圖上的筆畫進行簍空割除，後運用拍粉技法將圖形印到大型招牌看板上。<br>攝／許容榕</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-            </section>
-
-            <!-- Section 4.2: Horizontal Scroll -->
-            <section class="scrolly-section horizontal-scroll" id="sec-4-2">
-                <div class="sticky-wrapper">
-                    <div class="horizontal-track">
-                        <div class="h-panel d-flex align-items-center justify-content-center bg-light text-dark">
-                            <div class="p-5">
-                                <h3>Final Horizontal Sequence</h3>
+                        <div class="timeline-block fade-in-element">
+                            <h3 class="timeline-title">秘訣二：用有限色彩，設計特定年代感</h3>
+                            <p class="timeline-desc">
+                                雖然有高穩定度的進口漆，他仍會與台灣常見的磁漆混用。一方面是調性相近，另一方面是為了模擬特定年代的色彩限制。很多復古感不是來自「套濾鏡」，而是來自「顏色真的不多」。過去的師傅習慣用紅、白、藍、黑，加一點白或黑去調出不同深淺。King­son 會刻意把自己的色彩選擇壓在這個範圍內，讓成品看起來像是可以合理出現在某個年代的東西，而不是「現在做出來、假裝很老」。
+                            </p>
+                            <div class="mt-4">
+                                <img src="img/ch3/ch3_kingson_09.jpg" class="img-fluid rounded shadow-sm" alt="調色過程">
+                                <p class="text-muted small mt-2">Kingson 曾為宜蘭在地早餐老牌城隍早餐重新設計並繪製店內招牌，至今已成為當地著名地標。設計過程中採用台灣傳統原色（紅、藍）進行搭配組合，並以灰底作為背景，突出色彩，用創意與傳統相互結合。<br>左上圖／許容榕攝；左下圖／許巧昕攝；右圖／Kingson Artworks</p>
                             </div>
                         </div>
-                        <div class="h-panel d-flex align-items-center justify-content-center bg-white text-dark">
-                            <div class="p-5">
-                                <h3>Credits</h3>
-                                <p>Designed with Bootstrap & JS.</p>
-                            </div>
-                        </div>
-                        <div class="h-panel d-flex align-items-center justify-content-center bg-black text-white">
-                            <div class="p-5">
-                                <h3>The End</h3>
+                        <div class="timeline-block fade-in-element">
+                            <h3 class="timeline-title">秘訣三：不上保護漆，讓時間成為共同創作者</h3>
+                            <p class="timeline-desc">
+                                King­son 時常刻意不在成品上再噴一道透明保護漆，以專業角度來看，這樣當然會影響招牌的壽命。然而，對一位以字為核心的創作者來說，「老化」本身也是設計的一部分。King­son 希望的，是一種可預測、可控制的慢慢衰退，顏料會隨時間略略退色，在這個意義上，不把招牌封存成「永遠一樣」，而是預留空間，讓風吹日曬、讓城市環境一起寫進這幾個字裡，回歸自然。
+                            </p>
+                            <div class="mt-4">
+                                <img src="img/ch3/ch3_kingson_10.jpg" class="img-fluid rounded shadow-sm" alt="自然老化的招牌">
+                                <p class="text-muted small mt-2">Kingson 並不會執著於色彩永久的飽滿，而是追求手繪職人自然的筆觸與當下，時間足以一種參與和增添創作價值，讓創作回歸自然與原始。<br>圖／許容榕攝</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Story Section -->
+            <section class="scrolly-section" id="sec-4-10" style="height: auto; background-color: #fffae4;">
+                <div class="container-fluid immersive-story text-white" style="padding-top: 15vh; padding-bottom: 5vh;">
+                    <div class="story-columns black">
+                        <p>對 King­son 而言，手繪不只是實用標示，而是一件會掛在街上、與城市一起變化的作品，他透過秉持傳統並融入新意，讓台灣世代認知到在這座城市裡，仍然有人選擇用手，慢慢把傳統與自然寫上去，並且願意陪它一起變老。</p>
+                        <img src="img/ch3/ch3_kingson_11.jpg" alt="Kingson" class="img-fluid mt-3" style="width: 100%; height: auto;">
+                        <p>字體藝術家 Kingson 臉書粉絲專頁：<br><a href="https://www.facebook.com/kingson.artworks/" target="_blank" rel="noopener noreferrer">https://www.facebook.com/kingson.artworks/</a>
+                            <br>字體藝術家 Kingson IG 粉絲專頁：<br><a href="https://www.instagram.com/kingsonartworks/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/kingsonartworks/</a></p>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            
+            
+           
         </article>
 
     </main>
