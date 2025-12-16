@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
     <!-- Google Fonts for nice typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +40,10 @@
     <header id="intro-header" class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="header-bg-container"></div>
         <div id="header-text-box" class="text-center">
-            <img src="img/ch0/title.svg" alt="字裡行間的城市記憶——臺灣手繪招牌的消逝與重生" style="width: 100%; height: auto;">
+            <img src="img/ch0/title.svg" alt="字裡行間的城市記憶——臺灣手繪招牌的消逝與重生" style="width: 100%; max-width: 900px; height: auto;">
+            <div class="mt-3">
+                <h2 class="h3 fw-bold text-dark" style="letter-spacing: 0.1em; margin-top: 5vh;">我們希望說一場關於「臺灣・寫字」的故事。</h2>
+            </div>
         </div>
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
@@ -62,15 +66,14 @@
                 <div class="content-overlay container">
                         <div class="row justify-content-center">
                             <div class="col-md-10">
-                                <div class="info-box card p-4 mb-5 shadow">
+                                <div class="info-box card p-5 mb-4 shadow">
                                     <p>還記得上一次是什麼時候，深深望向臺灣街道的面貌嗎？</p>
                                     <p>招牌，是一種宣稱「我是誰」的符號。</p>
                                     <p>那麽未來10年的我們，還會記得那些寫繪出屬於臺灣城市面貌的雙手嗎？</p>
                                     <p>近年「臺式美學」與「臺灣感性」在國內外設計圈與社群平臺掀起熱潮，復古字體、手繪招牌、街邊老字號的溫度，成為品牌與文創追逐的靈感來源。然而，就在這股文化熱潮興起的同時，2024年《都市更新條例》修法後的推動進程，臺灣老舊街區的改建腳步加快，許多承載在地記憶的手繪招牌，也隨著一棟棟老屋的拆除而消失。</p>
                                     <p>手繪字不只是街頭的一道風景，它凝聚了老字師的工藝技術與長年勞動的痕跡，如今卻在更新的浪潮中逐漸淡出，地方語言與生活感在被標準化的視覺中逐漸失語。然而，在另一端，仍有新一代設計師試圖以不同形式延續這份感性，透過再設計、字型重製與文化再生的方式，讓手繪字在當代獲得新的生命。在世代交疊下，兩代人如何延續屬於臺灣的「我是誰」？</p>
-                                    <p>我們希望說一場關於「臺灣．字」的故事。</p>
-                                    <p>重新思考在「更新」與「保存」之間是否仍有可能並存。</p>
-                                    <p style="text-align: center;">
+                                    <p>我們希望說一場關於「臺灣．字」的故事，重新思考在「更新」與「保存」之間是否仍有可能並存。</p>
+                                    <p style="text-align: center; padding-top: 5vh;">
                                         <b>而你知道……<br>一塊手繪招牌是如何被製作出來的嗎？</b>
                                     </p>
                                 </div>
@@ -78,8 +81,10 @@
                         </div>
                     </div>
             </section>
+        </article>
 
             <!-- Section 1.1: Horizontal Scroll -->
+            <article id="chapter-1" class="chapter">
             <section class="scrolly-section horizontal-scroll" id="sec-1-1" style="padding: 0; margin: 0; background-color: #000;">
                 <div class="sticky-wrapper" style="top: 0; height: 100vh; width: 100%; overflow: hidden;">
                     <div class="horizontal-track" style="display: flex; height: 100vh; width: max-content; margin: 0; padding: 0;">
@@ -89,25 +94,25 @@
                 </div>
             </section>
 
-            <section class="scrolly-section vertical-scroll" id="sec-1-2">
+            <section class="scrolly-section vertical-scroll" id="sec-1-2" style="margin-top: -5px; position: relative; z-index: 2; background-color: #000;">
                 <div class="sticky-container">
                     <div class="background-visual fading-bg" style="background-image: url('img/ch1/CH1_skill.png');"></div>
                     <!-- Title Fixed -->
                     <div class="position-absolute end-0 pe-5" style="z-index: 2; right: 30px; top: 120px;">
-                         <h2 class="display-3 fw-bold text-black" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">手繪招牌師傅<span style="color: #ee2331;">兩大</span><span style="color: #1800ad;">必備</span><span style="color: #078246;">技能</span></h2>
+                         <h2 class="display-3 fw-bold text-black">手繪招牌師傅<span style="color: #ee2331;">兩大</span><span style="color: #1800ad;">必備</span><span style="color: #078246;">技能</span></h2>
                     </div>
                 </div>
                 <div id="sec-1-2-overlay" class="content-overlay container-fluid">
                     <!-- Info Boxes Row -->
                     <div class="row justify-content-center" style="padding-top: 20vh;">
                         <div class="col-md-5 mx-3">
-                            <div class="info-box card p-4 mb-5 shadow" style="background-color: #e9e9e8;">
+                            <div class="info-box card p-5 mb-5 shadow" style="background-color: #e9e9e8;">
                                 <h3 style="text-align: center;"><b>書法</b></h3>
                                 <p>招牌上的字體，師傅們會臨摹「商用字彙」等字帖，練習字形結構、筆畫粗細，讓字體更加端正、美觀。臺灣常見的手繪招牌字體多以隸書或楷書為主，可說是臺灣的代表字型。</p>
                             </div>
                         </div>
                         <div class="col-md-5 mx-3">
-                            <div class="info-box card p-4 mb-5 shadow" style="background-color: #e9e9e8;">
+                            <div class="info-box card p-5 mb-5 shadow" style="background-color: #e9e9e8;">
                                 <h3 style="text-align: center;"><b>素描</b></h3>
                                 <p>早年臺灣戲院需要手繪看板，不少師傅除了畫招牌，也畫電影海報，因此就必須掌握精準比例、光影變化與人物輪廓。有些招牌上需加上圖像、插畫，讓整體招牌更具視覺美感。</p>
                             </div>
@@ -115,8 +120,8 @@
                     </div>
                 </div>
             </section>
-        
         </article>
+
 
         <!-- Chapter 2 -->
         <article id="chapter-2" class="chapter">
@@ -127,8 +132,8 @@
                 </div>
                 <div id="sec-2-1-overlay" class="content-overlay container-fluid" style="min-height: 200vh;">
                     <div class="overlay-title">
-                        <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">產業變遷下的縮影<br>一位招牌老師傅的退場</h2>
-                        <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——手繪招牌師傅 廖文宏</h3>
+                        <h2 class="display-5 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">產業變遷下的縮影<br>一位招牌老師傅的退場</h2>
+                        <h3 class="display-7 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——手繪招牌師傅 廖文宏</h3>
                     </div>
                 </div>
             </section>
@@ -139,48 +144,48 @@
                 </div>
                 <div id="sec-2-2-overlay" class="content-overlay container-fluid immersive-story text-white" style="padding-top: 25vh;">
                     <div class="story-columns hw">                        
-                        <p>然而隨著時代演變，台灣的手繪招牌師傅大多年事已高，不再執筆或已離世。</p>
-                        <p>台北市的中心廣告社，是見證這段技藝歷史的據點之一。中心廣告社創立至今，已陪伴城市走過半個世紀，見證從台灣店家招牌美學的變化。負責人廖文宏師傅今年已逾七十，最早以「手繪」維生，然而隨著電腦割字、大圖輸出的普及，他也做出其他選擇……</p>
-                        <p>儘管如此，中心廣告社的存在，仍見證手繪技藝的輝煌年代，店面雖然不起眼，卻承載一代匠人的美學、技藝與生活記憶，而這門工藝，成了台灣城市景觀變遷中，逐漸被忽視的角色。</p>
+                        <p>然而隨著時代演變，臺灣的手繪招牌師傅大多年事已高，不再執筆或已離世。</p>
+                        <p>臺北市的中心廣告社，是見證這段技藝歷史的據點之一。中心廣告社創立至今，已陪伴城市走過半個世紀，見證從臺灣店家招牌美學的變化。負責人廖文宏師傅今年已逾七十，最早以「手繪」維生，然而隨著電腦割字、大圖輸出的普及，他也做出其他選擇……</p>
+                        <p>儘管如此，中心廣告社的存在，仍見證手繪技藝的輝煌年代，店面雖然不起眼，卻承載一代匠人的美學、技藝與生活記憶，而這門工藝，成了臺灣城市景觀變遷中，逐漸被忽視的角色。</p>
                     </div>
                     <div class="story-columns">
-                        <p>廖文宏出生於台中，在那個以讀書翻身的年代，他卻難以掌握書本上的知識，國中時甚至被貼上「不良學生」、「太保」的標籤。但幸運的是，從事戲劇佈景工作的師父仍願意給15歲的廖文宏一個機會，他成為學徒，從沒有薪水的打雜工作開始做起，在師父身邊慢慢觀察、學習手藝，幾年後熬過學徒生活、成功出師。結束學徒的那天，師父送給他一盒畫筆，成了他踏入廣告人生的第一筆資產。</p>
-                        <p>帶著這盒畫筆，廖文宏離開故鄉台中，北上到新竹、台北闖蕩。早期的他沒有資本，店面與裁縫社共用，甚至連接單的電話都是跟其他店家借，從最基礎的吊招牌、做鐵架開始他的廣告人生。</p>
-                        <p>後來廖文宏進入軍隊服役，不如外界所想像的痛苦，當長官得知他「是做廣告的」，立刻指派他成為<b><u>營區裡的畫師</u></b>，從營區壁畫、國防標語到迎接高階長官視察的大型海報都成為他的工作，甚至因此獲得一般人沒有的假期。廖文宏憑藉自己的手藝，一路從連上畫到營上，從營上畫到軍部，成為他的軍旅寫照。</p>
+                        <p>廖文宏出生於臺中，在那個以讀書翻身的年代，他卻難以掌握書本上的知識，國中時甚至被貼上「不良學生」、「太保」的標籤。但幸運的是，從事戲劇佈景工作的師父仍願意給15歲的廖文宏一個機會，他成為學徒，從沒有薪水的打雜工作開始做起，在師父身邊慢慢觀察、學習手藝，幾年後熬過學徒生活、成功出師。結束學徒的那天，師父送給他一盒畫筆，成了他踏入廣告人生的第一筆資產。</p>
+                        <p>帶著這盒畫筆，廖文宏離開故鄉臺中，北上到新竹、臺北闖蕩。早期的他沒有資本，店面與裁縫社共用，甚至連接單的電話都是跟其他店家借，從最基礎的吊招牌、做鐵架開始他的廣告人生。</p>
+                        <p>後來廖文宏進入軍隊服役，不如外界所想像的痛苦，當長官得知他「是做廣告的」，立刻指派他成為<span class="highlight"><b>營區裡的畫師</b></span>，從營區壁畫、國防標語到迎接高階長官視察的大型海報都成為他的工作，甚至因此獲得一般人沒有的假期。廖文宏憑藉自己的手藝，一路從連上畫到營上，從營上畫到軍部，成為他的軍旅寫照。</p>
                     </div>
                     
                     <!-- Photo Gallery -->
                     <div class="photo-gallery">
                         <div class="photo-item">
                             <img src="img/ch1/CH1_liao2.jpg" alt="廖文宏師傅" class="img-fluid">
-                            <p class="photo-caption">中心廣告社廖文宏師傅。<br>攝／王浚耀</p>
+                            <p class="photo-caption">中心廣告社廖文宏師傅。攝／王浚耀</p>
                         </div>
                         <div class="photo-item">
                             <img src="img/ch1/CH1_liao3.jpg" alt="中心廣告社" class="img-fluid">
-                            <p class="photo-caption">中心廣告社現在不只做手繪招牌。<br>攝／王浚耀</p>
+                            <p class="photo-caption">中心廣告社現在不只做手繪招牌。攝／王浚耀</p>
                         </div>
                         <div class="photo-item">
                             <img src="img/ch1/CH1_liao4.jpg" alt="傳統竹尺" class="img-fluid">
-                            <p class="photo-caption">竹尺是招牌師傅的重要工具，現已停產。<br>攝／王浚耀</p>
+                            <p class="photo-caption">竹尺是招牌師傅的重要工具，現已停產。攝／王浚耀</p>
                         </div>
                     </div>
 
-                    <div class="story-columns">
-                        <p>退伍後，廖文宏用5000元的積蓄，在台北市華陰街創立「中心廣告社」。創業的當下，是<b><u>台灣手繪廣告看板蓬勃發展的年代</u></b>，當時沒有數位科技的協助，街上新開的店家招牌、政府的政令宣導海報、即將上映的電影看板，都需要擁有手藝的師傅手工繪製。那是一個城市被人手打造、被筆觸渲染的年代，而廖文宏就是其中的一份子。</p>
-                        <p>那時的招牌師傅可不只是安安靜靜坐著畫畫，反而要成為「通才」：除了最基本的寫字、畫畫，可能還要會雕刻、木工，甚至要有膽量爬高掛招牌。一塊招牌從切割、打稿、調色到豎立在店門口，<b><u>幾乎都是廣告師傅一手包辦。</u></b></p>
+                    <div class="story-columns" style="margin-top: 5vh;">
+                        <p>退伍後，廖文宏用5000元的積蓄，在臺北市華陰街創立「中心廣告社」。創業的當下，是<span class="highlight"><b>臺灣手繪廣告看板蓬勃發展的年代</b></span>，當時沒有數位科技的協助，街上新開的店家招牌、政府的政令宣導海報、即將上映的電影看板，都需要擁有手藝的師傅手工繪製。那是一個城市被人手打造、被筆觸渲染的年代，而廖文宏就是其中的一份子。</p>
+                        <p>那時的招牌師傅可不只是安安靜靜坐著畫畫，反而要成為「通才」：除了最基本的寫字、畫畫，可能還要會雕刻、木工，甚至要有膽量爬高掛招牌。一塊招牌從切割、打稿、調色到豎立在店門口，<span class="highlight"><b>幾乎都是廣告師傅一手包辦。</b></span></p>
                         <p>然而，科技浪潮隨之而來，電腦刻字、大圖輸出進入廣告市場後，其速度、成本遠遠勝過手繪技藝，手繪招牌逐漸被市場邊緣化。</p>
-                        <p>中心廣告社也因應時代潮流、擁抱新技術，從原先做手繪生意轉向電腦化流程。他坦言，<b><u>手繪技法的消逝固然可惜，但人還是需要順著社會走，為了生活仍須作出轉變。</u></b></p>
+                        <p>中心廣告社也因應時代潮流、擁抱新技術，從原先做手繪生意轉向電腦化流程。他坦言，<span class="highlight"><b>手繪技法的消逝固然可惜，但人還是需要順著社會走，為了生活仍須作出轉變。</b></span></p>
                         <p>如今，廖文宏的畫筆早已丟棄，如同產業縮影——曾經輝煌，但也黯淡了。</p>
                     </div>
                 </div>
             </section>
 
             <!-- Section 2.3: Horizontal Scroll -->
-            <section class="scrolly-section horizontal-scroll" id="sec-2-3">
+            <section class="scrolly-section horizontal-scroll" id="sec-2-3" style="background-color: #666666;">
                 <div class="sticky-wrapper">
                     <div class="horizontal-track">
                         <!-- Horizontal Banner Image -->
-                        <img src="img/ch2/CH2_banner.png" alt="Chapter 1 Banner" style="height: 100vh; width: auto; max-width: none;">                    
+                        <img id="sec-2-3-img" src="img/ch2/CH2_banner.png" alt="Chapter 1 Banner" style="height: 100vh; width: auto; max-width: none; opacity: 0; transition: opacity 1s ease;">                    
                     </div>
                 </div>
             </section>
@@ -196,13 +201,13 @@
                     <img id="sec-3-1-wipe" src="img/ch2/CH2_now.jpg" alt="After" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; clip-path: inset(0 0 0 100%); will-change: clip-path;">
                 </div>
                 <div class="content-overlay container">
-                    <div style="height: 100vh;"></div> <!-- Spacer for wipe effect -->
+                    <div style="height: 200vh;"></div> <!-- Spacer for wipe effect -->
                     <div class="row justify-content-center">
                         <div class="col-md-10">
-                            <div class="info-box card p-4 mb-5 shadow" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); color: white;">
+                            <div class="info-box card p-5 mb-5 shadow" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); color: white;">
                                 <h1>當「傳統」工法受到衝擊<br>「新興」世代如何為斷層搭橋？</h1>
-                                <p>近30年來，隨著經濟發展和人口向都市集中，臺灣的城市開始快速擴張和發展。從過去的低矮房舍轉變為現代化的高樓大廈，標準化尺寸、制式字體與壓克力燈箱，確實讓街景變得整齊、安全性也提高，但代價之一，是大量手繪招牌在短時間內消失。當這份以效率、安全、美觀為主的政策與商業邏輯，在制度設計與成本考量下，手繪招牌正被排除出主流商業空間，受到了邊緣化的挑戰。然而，技藝逐漸退場時，新興時代重新將其拉回光線下。近十年，臺灣興起一波以「懷舊」、「復古」的「台灣感性（韓語：대만감성）」掀起熱潮，成為一種國際間可被命名的在地美學。</p>
-                                <p>這股拾起懷舊的風潮，讓傳統技藝從「上一代的記憶」轉為「下一代可以實際運用的資源」。在台灣，有一群年輕人選擇不是只「紀念」傳統，而是把它當成一種可以重新設計的語言，他們開酒吧、畫招牌、做文創，嘗試在當代的語境裡，替老東西找到新位置。</p>
+                                <p style="margin-top: 2vh;">近30年來，隨著經濟發展和人口向都市集中，臺灣的城市開始快速擴張和發展。從過去的低矮房舍轉變為現代化的高樓大廈，標準化尺寸、制式字體與壓克力燈箱，確實讓街景變得整齊、安全性也提高，但代價之一，是大量手繪招牌在短時間內消失。當這份以效率、安全、美觀為主的政策與商業邏輯，在制度設計與成本考量下，手繪招牌正被排除出主流商業空間，受到了邊緣化的挑戰。然而，技藝逐漸退場時，新興時代重新將其拉回光線下。近十年，臺灣興起一波以「懷舊」、「復古」的「臺灣感性（韓語：대만감성）」掀起熱潮，成為一種國際間可被命名的在地美學。</p>
+                                <p>這股拾起懷舊的風潮，讓傳統技藝從「上一代的記憶」轉為「下一代可以實際運用的資源」。在臺灣，有一群年輕人選擇不是只「紀念」傳統，而是把它當成一種可以重新設計的語言，他們開酒吧、畫招牌、做文創，嘗試在當代的語境裡，替老東西找到新位置。</p>
                             </div>
                         </div>
                     </div>
@@ -215,34 +220,34 @@
                 </div>
                 <div id="sec-3-2-overlay" class="content-overlay container-fluid" style="min-height: 200vh;">
                     <div class="overlay-title">
-                        <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">掛上一塊手寫的溫度<br>在城市點綴台灣味</h2>
-                        <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——Learn Bar 學吧創辦人 Clive</h3>
+                        <h2 class="display-5 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">掛上一塊手寫的溫度<br>在城市點綴臺灣味</h2>
+                        <h3 class="display-7 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——Learn Bar 學吧創辦人 Clive</h3>
                     </div>
                 </div>
             </section>
 
             <section class="scrolly-section vertical-scroll" id="sec-3-3">
                 <div class="sticky-container">
-                    <div class="background-visual" style="background-color: #fffae4;"></div>
+                    <div class="background-visual"></div>
                 </div>
                 <div id="sec-3-3-overlay" class="content-overlay container-fluid immersive-story text-white" style="padding-top: 25vh;">
                     <div class="story-columns hw black">                        
                         <div style="text-align: left; margin-bottom: 1rem;">
-                            <p class="typewriter">「將台灣手繪融入裝設，形塑是一個有溫度的空間」</p>
+                            <p class="typewriter" data-group="1">「將臺灣手繪融入裝設，形塑是一個有溫度的空間」</p>
                         </div>
                         <div style="text-align: right;">
-                            <p class="typewriter">—— Learn Bar 學吧創辦人 Clive</p>
+                            <p class="typewriter" data-group="1">—— Learn Bar 學吧創辦人 Clive</p>
                         </div>
-                        <p style="margin-top: 5vh;">在台北市中正區的街道上，高樓大廈縱橫排列，一間掛著手繪招牌的酒吧屹立於城市之中，並非顯得格外醒目，但存在著不同尋常的恆溫溫度。走進一看，這是一間保留臺灣手繪技藝的酒吧——Learn Bar 學吧。</p>            
+                        <p style="margin-top: 5vh;">在臺北市中正區的街道上，高樓大廈縱橫排列，一間掛著手繪招牌的酒吧屹立於城市之中，並非顯得格外醒目，但存在著不同尋常的恆溫溫度。走進一看，這是一間保留臺灣手繪技藝的酒吧——Learn Bar 學吧。</p>            
                     </div>
                     <div class="story-columns black">
-                        <p>Learn Bar 學吧為一間專售台灣精釀啤酒的酒吧，其裝潢風格與內置與大眾對於「酒吧」霓虹、酒綠與昏暗交雜的氛圍截然不同，明亮的暖色調燈光、溫馨的桌椅配置、色彩繽紛且精緻的菜單與壁畫，體現了酒吧創辦人 Clive 對於台灣飲酒產業的期許，讓飲酒文化不再侷限於空間與距離，而是創造一種足以開放心胸、任人皆足以釋放壓力的歸屬，試圖顛覆傳統上酒吧所代表的距離感與排他性，讓顧客可以帶家人、寵物、朋友一同前至，享受輕鬆的社交體驗。</p>                        
+                        <p>Learn Bar 學吧為一間專售臺灣精釀啤酒的酒吧，其裝潢風格與內置與大眾對於「酒吧」霓虹、酒綠與昏暗交雜的氛圍截然不同，明亮的暖色調燈光、溫馨的桌椅配置、色彩繽紛且精緻的菜單與壁畫，體現了酒吧創辦人 Clive 對於臺灣飲酒產業的期許，讓飲酒文化不再侷限於空間與距離，而是創造一種足以開放心胸、任人皆足以釋放壓力的歸屬，試圖顛覆傳統上酒吧所代表的距離感與排他性，讓顧客可以帶家人、寵物、朋友一同前至，享受輕鬆的社交體驗。</p>                        
                         <img src="img/ch3/ch3_learnbar_02.jpg" alt="Learn Bar Interior" class="img-fluid mt-3" style="width: 100%; height: auto;">
-                        <p class="photo-caption" style="color: black; text-align: center;">Learn Bar 學吧店面前的手繪招牌。<br>攝／許巧昕</p>
+                        <p class="photo-caption" style="color: black; text-align: center;">Learn Bar 學吧店面前的手繪招牌。攝／許巧昕</p>
                     </div>
-                    <div class="story-columns black">
-                        <p>Clive 期許將「台灣」味道放大融入酒吧經營，呼應對於台灣傳統文化親和、人情、溫暖的調性，拉近人與空間的距離。因此，在一間店家最重要的「招牌」決策中，他毅然決然以傳統取代現代，邀請台灣手繪招牌老職人下筆，因緣際會之下尋得已封筆多年的廖師傅為這份創業精神，保留手繪當下的創業熱忱與初衷。</p>
-                        <p>Learn Bar 學吧的招牌仍向陽地懸掛於中正區的一隅，手工筆觸、略微不平整的線條、暖色系的顏料，讓 Learn Bar 成為了將台灣在地文化與故事傳遞出去的推手。曾經我們認為，手繪招牌與店家是勢必存然，但如今，該搭配組合已然消逝於這座城市之中。然而，Learn Bar 學吧並非是消逝中的僅存，而是這份僅存的延續與起點，延續台灣傳統生活感的象徵。</p>
+                    <div class="story-columns black" style="margin-top: 5vh;">
+                        <p>Clive 期許將「臺灣」味道放大融入酒吧經營，呼應對於臺灣傳統文化親和、人情、溫暖的調性，拉近人與空間的距離。因此，在一間店家最重要的「招牌」決策中，他毅然決然以傳統取代現代，邀請臺灣手繪招牌老職人下筆，因緣際會之下尋得已封筆多年的廖師傅為這份創業精神，保留手繪當下的創業熱忱與初衷。</p>
+                        <p style="margin-bottom: 5vh;">Learn Bar 學吧的招牌仍向陽地懸掛於中正區的一隅，手工筆觸、略微不平整的線條、暖色系的顏料，讓 Learn Bar 成為了將臺灣在地文化與故事傳遞出去的推手。曾經我們認為，手繪招牌與店家是勢必存然，但如今，該搭配組合已然消逝於這座城市之中。然而，Learn Bar 學吧並非是消逝中的僅存，而是這份僅存的延續與起點，延續臺灣傳統生活感的象徵。</p>
                         
                         <!-- Slideshow -->
                         <div class="slideshow-container mt-4" style="position: relative; width: 100%; background: #000;">
@@ -250,7 +255,7 @@
                                 <img id="slideshow-img" src="img/ch3/ch3_learnbar_03.jpg" alt="Slideshow" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
                             </div>
                         </div>
-                        <p>資訊：Learn Bar 學吧精釀
+                        <p style="margin-top: 3vh; text-align: center;">資訊：Learn Bar 學吧精釀
                             <br>地址：臺北市中正區信義路二段253號1樓
                             <br>電話：02-2396-6818</p>
                     </div>
@@ -267,17 +272,17 @@
                 </div>
                 <div id="sec-4-1-overlay" class="content-overlay container-fluid" style="min-height: 200vh;">
                     <div class="overlay-title">
-                        <h2 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">用雙手勾勒出，<br>屬於台灣字體新世代的輪廓</h2>
-                        <h3 class="display-6 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——手繪藝術家 Kingson</h3>
+                        <h2 class="display-5 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">用雙手勾勒出，<br>屬於臺灣字體新世代的輪廓</h2>
+                        <h3 class="display-7 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——手繪藝術家 Kingson</h3>
                     </div>
                 </div>
             </section>
 
-            <section class="scrolly-section vertical-scroll" id="sec-4-2" style="height: 100vh; position: sticky; top: 0;">
+            <section class="scrolly-section vertical-scroll" id="sec-4-2" style="height: 55vh;">
                 <div class="sticky-container">
-                    <div class="background-visual" style="background-color: #fffae4;"></div>
+                    <div class="background-visual"></div>
                 </div>
-                <div id="sec-4-2-overlay" class="content-overlay container-fluid immersive-story text-white" style="padding-top: 25vh; min-height: 100vh;">
+                <div id="sec-4-2-overlay" class="content-overlay container-fluid immersive-story text-white">
                     <div class="story-columns hw black">
                         <p>在數位輸出與LED招牌已成主流的今天，手繪不再成為一種必須。儘管如此，仍有新一代將其視為人生重心，繼續用畫筆融入新興世代的觀點，延續這份傳統技藝。</p>
                         <p>手繪藝術師 Kingson，是一位以手繪字為核心創作、專注於招牌與標識的藝術家。「以無法為有法，以無限為有限。」這句話是 Kingson 深受李小龍哲學啟發而採用的理念。對他合作的店家而言，手繪招牌不是開店流程的一個項目，而是一個「一定想要完成」的環節。King­son 形容，會來找他的老闆，往往是在對自家品牌有信心之後，才決定投資一個「可以陪店一起老去」的作，即使沒有人敢說自己一定能開一百年，但他們希望招牌本身，能具備那種可以撐很久、越舊越好看的質感。</p>
@@ -289,8 +294,8 @@
             <section class="scrolly-section vertical-scroll" id="sec-4-3" style="height: 500vh;">
                 <div class="sticky-container">
                     <div class="background-visual" style="background-image: url('img/ch3/ch3_kingson_02.jpg');"></div>
-                    <div id="sec-4-3-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
-                        <p>手繪招牌之所以有價值，在於體現了真實和自然的質感，他會故意保留漆的筆觸與某些瑕疵，追求「功力出來的樣貌」，因為這才是手繪獨一無二的意義。因此，承接當下的復古潮，仍有店家期待以手繪呈現理念，仍有店家在開店或改裝時，主動尋找 Kingson 合作。手繪招牌在開店預算表裡，多半不在最前面，但 King­son 發現，那些最後仍決定找他合作的店家，有幾個明顯共同點。</p>
+                    <div id="sec-4-3-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 600px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p style="margin-bottom: 0;">手繪招牌之所以有價值，在於體現了真實和自然的質感，他會故意保留漆的筆觸與某些瑕疵，追求「功力出來的樣貌」，因為這才是手繪獨一無二的意義。因此，承接當下的復古潮，仍有店家期待以手繪呈現理念，仍有店家在開店或改裝時，主動尋找 Kingson 合作。手繪招牌在開店預算表裡，多半不在最前面，但 King­son 發現，那些最後仍決定找他合作的店家，有幾個明顯共同點。</p>
                     </div>
                 </div>
                 <div class="content-overlay container-fluid" style="min-height: 500vh; pointer-events: none;">
@@ -300,11 +305,11 @@
             <section class="scrolly-section vertical-scroll" id="sec-4-4" style="height: 500vh;">
                 <div class="sticky-container">
                     <div class="background-visual" style="background-image: url('img/ch3/ch3_kingson_03.jpg');"></div>
-                    <div id="sec-4-4-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
-                        <p>首先，他們將手繪招牌當成創業歷程中的一個里程碑，很多老闆在還沒開店之前，就對某一種手寫字體或某面老招牌留下深刻印象。等到真正輪到自己要掛上第一塊招牌時，手繪字就成了「這次一定要做」的選擇。這並非一種功能上的必要，而是對自己一路走到這裡的一種紀念與完成。對他們而言，請一位字體藝術家來「寫出」店名，是把情感與理想具體長在牆上的過程。</p>
+                    <div id="sec-4-4-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 600px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p style="margin-bottom: 0;">首先，他們將手繪招牌當成創業歷程中的一個里程碑，很多老闆在還沒開店之前，就對某一種手寫字體或某面老招牌留下深刻印象。等到真正輪到自己要掛上第一塊招牌時，手繪字就成了「這次一定要做」的選擇。這並非一種功能上的必要，而是對自己一路走到這裡的一種紀念與完成。對他們而言，請一位字體藝術家來「寫出」店名，是把情感與理想具體長在牆上的過程。</p>
                     </div>
-                    <div id="sec-4-4-card-2" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
-                        <p>其次，他們希望用字體說明自己的風格與品味，在同一條街上，LED、噴繪、貼紙招牌的視覺往往趨於一致。選擇手繪招牌的店，多半不只是想「看起來不一樣」，而是希望用字體本身去傳達店的性格，手繪字因此成為了一種模板無法取代的品味與立場宣示。</p>
+                    <div id="sec-4-4-card-2" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 600px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p style="margin-bottom: 0;">其次，他們希望用字體說明自己的風格與品味，在同一條街上，LED、噴繪、貼紙招牌的視覺往往趨於一致。選擇手繪招牌的店，多半不只是想「看起來不一樣」，而是希望用字體本身去傳達店的性格，手繪字因此成為了一種模板無法取代的品味與立場宣示。</p>
                     </div>
                 </div>
                 <div class="content-overlay container-fluid" style="min-height: 500vh; pointer-events: none;">
@@ -314,16 +319,16 @@
             <section class="scrolly-section vertical-scroll" id="sec-4-5" style="height: 500vh;">
                 <div class="sticky-container">
                     <div class="background-visual" style="background-image: url('img/ch3/ch3_kingson_04.jpg');"></div>
-                    <div id="sec-4-5-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 400px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
-                        <p>再者，是來自店家對於經營穩定度的自信，剛開店時，許多人會暫時選擇較低成本的招牌方案，等營運穩定後再升級門面。反而是開店三到五年、對品牌有一定把握的店家，更願意花錢請字體藝術家重新寫一塊招牌。</p>
+                    <div id="sec-4-5-card" class="card p-4 shadow" style="position: absolute; right: 8vw; width: 600px; background: rgba(255,255,255,0.85); color: black; backdrop-filter: blur(15px); will-change: transform, opacity; pointer-events: auto; z-index: 100;">                        
+                        <p style="margin-bottom: 0;">再者，是來自店家對於經營穩定度的自信，剛開店時，許多人會暫時選擇較低成本的招牌方案，等營運穩定後再升級門面。反而是開店三到五年、對品牌有一定把握的店家，更願意花錢請字體藝術家重新寫一塊招牌。</p>
                     </div>
                 </div>
                 <div class="content-overlay container-fluid" style="min-height: 500vh; pointer-events: none;">
                 </div>
             </section>            
 
-            <section class="scrolly-section" id="sec-4-6" style="height: auto; background-color: #fffae4;">
-                <div id="sec-4-6-overlay" class="container-fluid immersive-story text-white" style="padding-top: 15vh; padding-bottom: 15vh;">
+            <section class="scrolly-section" id="sec-4-6" style="height: auto;">
+                <div id="sec-4-6-overlay" class="container-fluid immersive-story text-white" style="padding-top: 10vh; padding-bottom: 10vh;">
                     <div class="story-columns black">
                         <p>Kingson 自小熱愛畫畫與創作，畢業於文化建築相關科系，在進入藝術領域之前，他曾任職於公務機關近五年。然而，對於藝術創作的熱愛，令其下定決心地跳脫體制枷鎖，辭去公務員的工作，毅然決然地前至臺北成為油漆學徒。在當學徒的兩年期間，Kingson 開始學習油漆彩繪相關的技法，如噴漆、拉線等技法。它曾將字體刺青師視為理想目標，字，是主角，而線條與色塊，是字體的延伸設計。於是決定將練習重點放在文字上，他每天練習各種字體，包括鋼筆字、硬筆與軟筆，從而正式開啟了他的文字創作之路。他的字體風格並非單一體系，而是融會貫通的成果，涵蓋了童年時期被父親逼著學習的書法、青春期接觸的塗鴉字體，以及後來所學的刺青字體和招牌彩繪技法，找到了將東方書法底蘊與西方手繪技藝融會貫通的道路。</p>
                         <p>儘管身處現代，Kingson 在工序上依然選擇往回走，刻意維持老一輩師傅留下來的方式，堅持使用傳統且費時的工法，極度理性地要求自己親自打稿、轉繪、塗繪。因為即便傳統技法雖然「老」，但在許多方面是無可取代的。</p>
@@ -339,12 +344,12 @@
             </section>
 
             <!-- Quote Section -->
-            <section class="scrolly-section d-flex align-items-center justify-content-center" style="height: 50vh; background-color: #fffae4;">
+            <section class="scrolly-section d-flex align-items-center justify-content-center" style="height: 40vh;">
                 <div class="fade-in-element text-center p-5">
-                    <h3 class="display-6 fw-bold hw" style="color: #333; line-height: 1.6; font-size: 1.8rem;">
+                    <h3 class="display-6 fw-normal hw typewriter" data-group="2" style="color: #333; line-height: 1.6; font-size: 1.8rem; margin-bottom: 5vh;">
                         「傳統技法雖然老跟笨， 但是其實它幾乎無可取代。」
                     </h3>
-                    <p>——字體藝術家 Kingson</p>
+                    <p class="typewriter" data-group="2">——字體藝術家 Kingson</p>
                 </div>
             </section>
 
@@ -370,22 +375,22 @@
                             <div class="row mt-4">
                                 <div class="col-md-6 mb-3">
                                     <img src="img/ch3/ch3_kingson_07.jpg" class="img-fluid rounded shadow-sm" alt="Kingson 參考字體本">
-                                    <p class="text-muted small mt-2">商用字體本為傳統手繪職人皆有的教科書，作為台灣常用字體（分書、楷書與隸書）的模板。<br>攝／許容榕</p>
+                                    <p class="text-muted small mt-2">商用字體本為傳統手繪職人皆有的教科書，作為臺灣常用字體（分書、楷書與隸書）的模板。攝／許容榕</p>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <img src="img/ch3/ch3_kingson_08.jpg" class="img-fluid rounded shadow-sm" alt="轉繪紙打稿">
-                                    <p class="text-muted small mt-2">手繪職人打稿後，會將於草圖上的筆畫進行簍空割除，後運用拍粉技法將圖形印到大型招牌看板上。<br>攝／許容榕</p>
+                                    <p class="text-muted small mt-2">手繪職人打稿後，會將於草圖上的筆畫進行簍空割除，後運用拍粉技法將圖形印到大型招牌看板上。攝／許容榕</p>
                                 </div>
                             </div>
                         </div>
                         <div class="timeline-block fade-in-element">
                             <h3 class="timeline-title">秘訣二：用有限色彩，設計特定年代感</h3>
                             <p class="timeline-desc">
-                                雖然有高穩定度的進口漆，他仍會與台灣常見的磁漆混用。一方面是調性相近，另一方面是為了模擬特定年代的色彩限制。很多復古感不是來自「套濾鏡」，而是來自「顏色真的不多」。過去的師傅習慣用紅、白、藍、黑，加一點白或黑去調出不同深淺。King­son 會刻意把自己的色彩選擇壓在這個範圍內，讓成品看起來像是可以合理出現在某個年代的東西，而不是「現在做出來、假裝很老」。
+                                雖然有高穩定度的進口漆，他仍會與臺灣常見的磁漆混用。一方面是調性相近，另一方面是為了模擬特定年代的色彩限制。很多復古感不是來自「套濾鏡」，而是來自「顏色真的不多」。過去的師傅習慣用紅、白、藍、黑，加一點白或黑去調出不同深淺。King­son 會刻意把自己的色彩選擇壓在這個範圍內，讓成品看起來像是可以合理出現在某個年代的東西，而不是「現在做出來、假裝很老」。
                             </p>
                             <div class="mt-4">
                                 <img src="img/ch3/ch3_kingson_09.jpg" class="img-fluid rounded shadow-sm" alt="調色過程">
-                                <p class="text-muted small mt-2">Kingson 曾為宜蘭在地早餐老牌城隍早餐重新設計並繪製店內招牌，至今已成為當地著名地標。設計過程中採用台灣傳統原色（紅、藍）進行搭配組合，並以灰底作為背景，突出色彩，用創意與傳統相互結合。<br>左上圖／許容榕攝；左下圖／許巧昕攝；右圖／Kingson Artworks</p>
+                                <p class="text-muted small mt-2">Kingson 曾為宜蘭在地早餐老牌城隍早餐重新設計並繪製店內招牌，至今已成為當地著名地標。設計過程中採用臺灣傳統原色（紅、藍）進行搭配組合，並以灰底作為背景，突出色彩，用創意與傳統相互結合。左上圖／許容榕攝；左下圖／許巧昕攝；右圖／Kingson Artworks</p>
                             </div>
                         </div>
                         <div class="timeline-block fade-in-element">
@@ -395,7 +400,7 @@
                             </p>
                             <div class="mt-4">
                                 <img src="img/ch3/ch3_kingson_10.jpg" class="img-fluid rounded shadow-sm" alt="自然老化的招牌">
-                                <p class="text-muted small mt-2">Kingson 並不會執著於色彩永久的飽滿，而是追求手繪職人自然的筆觸與當下，時間足以一種參與和增添創作價值，讓創作回歸自然與原始。<br>圖／許容榕攝</p>
+                                <p class="text-muted small mt-2">Kingson 並不會執著於色彩永久的飽滿，而是追求手繪職人自然的筆觸與當下，時間足以一種參與和增添創作價值，讓創作回歸自然與原始。圖／許容榕攝</p>
                             </div>
                         </div>
                     </div>
@@ -403,31 +408,144 @@
             </section>
 
             <!-- Story Section -->
-            <section class="scrolly-section" id="sec-4-10" style="height: auto; background-color: #fffae4;">
-                <div class="container-fluid immersive-story text-white" style="padding-top: 15vh; padding-bottom: 5vh;">
+            <section class="scrolly-section" id="sec-4-10" style="height: auto;">
+                <div class="container-fluid immersive-story text-white" style="padding-bottom: 10vh;">
                     <div class="story-columns black">
-                        <p>對 King­son 而言，手繪不只是實用標示，而是一件會掛在街上、與城市一起變化的作品，他透過秉持傳統並融入新意，讓台灣世代認知到在這座城市裡，仍然有人選擇用手，慢慢把傳統與自然寫上去，並且願意陪它一起變老。</p>
+                        <p>對 King­son 而言，手繪不只是實用標示，而是一件會掛在街上、與城市一起變化的作品，他透過秉持傳統並融入新意，讓臺灣世代認知到在這座城市裡，仍然有人選擇用手，慢慢把傳統與自然寫上去，並且願意陪它一起變老。</p>
                         <img src="img/ch3/ch3_kingson_11.jpg" alt="Kingson" class="img-fluid mt-3" style="width: 100%; height: auto;">
-                        <p>字體藝術家 Kingson 臉書粉絲專頁：<br><a href="https://www.facebook.com/kingson.artworks/" target="_blank" rel="noopener noreferrer">https://www.facebook.com/kingson.artworks/</a>
-                            <br>字體藝術家 Kingson IG 粉絲專頁：<br><a href="https://www.instagram.com/kingsonartworks/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/kingsonartworks/</a></p>
+                        <p style="margin-top: 3vh; text-align: center;">字體藝術家 Kingson 臉書粉絲專頁<br><a href="https://www.facebook.com/kingson.artworks/" target="_blank" rel="noopener noreferrer">https://www.facebook.com/kingson.artworks/</a>
+                            <br>字體藝術家 Kingson IG 粉絲專頁<br><a href="https://www.instagram.com/kingsonartworks/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/kingsonartworks/</a></p>
                         </p>
                     </div>
                 </div>
             </section>
-
-            
-            
-           
         </article>
+
+        <article id="chapter-5" class="chapter">
+        <section class="scrolly-section vertical-scroll" id="sec-5-1">
+            <div class="sticky-container">
+                <div class="background-visual fading-bg" style="background-image: url(img/ch3/ch3_oldhouseface_01.jpg);">
+                </div>
+            </div>
+            <div id="sec-5-1-overlay" class="content-overlay container-fluid">
+                <div class="overlay-title">
+                    <h2 class="display-5 fw-bold text-white"
+                        style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">用創意，延續老屋新意</h2>
+                    <h3 class="display-7 fw-bold text-white"
+                        style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 180%;">——老屋顏工作室創辦人 辛永勝、楊朝景</h3>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="story-columns" style="margin-bottom: 0px; text-align: center; margin-top: 100px;">
+                <div class="hw">
+                <p class="typewriter" data-group="3">「將熟悉的臺灣溫度文創化，成為一種讓世代理解臺灣歷史故事的媒介。」</p>
+                </div>
+                <div>
+                <p class="typewriter" data-group="3">——老屋顏工作室創辦人 辛永勝、楊朝景</p>
+                </div>
+            </div>
+            <div class="story-columns" style="margin-top: 10vh;">
+                <p>走在都市街道中，老舊的房子常常容易被忽略，甚至被視為阻礙或老舊的象徵。然而，對於老屋顏的創辦人而言，這些房子與招牌、鐵窗花、彩繪玻璃都是充滿故事的城市記憶。他們注意到，雖然這些元素在日常生活中漸漸消失，但卻仍然帶有熟悉感——一種只有在童年記憶與街景交會時才能感受到的溫度。
+                </p>
+            </div>
+            <img src="img/ch3/ch3_oldhouseface_02.jpg" style="width:100%;height:auto; margin-bottom: 70px;">
+            <div class="story-columns">
+                <p>老屋顏工作室從經營社群平臺起家，創辦人在臺灣本土旅行的過程中，開始拍攝這些局部的老屋元素並進行社群分享，從鐵窗花、手繪招牌、摩斯字、馬賽克、建築街景等，讓觀者重新發現這些被忽略的美感，並深入意識到臺灣五六十年前深植於建築屋材的歷史記憶，反轉大眾對於臺灣老屋的負面印象。
+                </p>
+                <p>在創辦人長期的紀錄之下，一個反復出現的發現在於，技術的更新逐漸改變世代對於「真實」的想像，也改變了街景的質地。以手繪招牌為例，現在的招牌多半透過輸出與印刷完成，色彩高度精準、比例準確、圖像幾乎與照片無異，「真實感」仰賴的是複製技術的還原度。但在印刷普及之前，招牌要「看起來很真」，必須靠師傅一筆一畫去模擬——無論是食品、人物還是商品，都得用手繪的方式還原出立體感與質地。從當時的標準來看，那些畫面已經相當逼真；然而放到今天的眼光裡，我們很容易看到比例略為失調、用色不那麼準確，甚至帶著明顯的人工誤差。對老屋顏來說，正是這些「不那麼完美」的地方，構成了我們今天再回頭看時，覺得有趣、甚至覺得可愛的美感來源。
+                </p>
+                <p>隨著社群關注度的提升，老屋顏期許讓更多民眾認知到臺灣傳統文化的故事，因此開始將這些元素轉化為文創商品於 Pinkoi
+                    等文創平臺進行販售。從紙膠帶、文具、文創設計商品、手機殼等，甚至到前年與悠遊卡公司合作推出之老屋顏悠遊卡，透過將故事融入設計，擴大接觸群體，這些設計不只是紀念品，而是一種讓更多人理解老屋美學的媒介。商品成為了文化的載體，消費者足以在購買的過程中被引導去了解每個圖案背後的故事，讓年輕世代用新的方式接觸、理解與傳承這些歷史細節。
+                </p>
+            </div>
+            </div>
+            <div class="story-columns" style="margin-bottom: 0;">
+                <div class="horizontal-gallery" id="auto-scroll-gallery">
+                    <div class="gallery-item">
+                        <img src="img/ch3/ch3_oldhouseface_03.jpg" alt="Old House Face 03">
+                        <p>老屋顏與悠遊卡股份有限公司合作，推出聯名悠遊卡。圖／老屋顏工作室</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/ch3/ch3_oldhouseface_04.jpg" alt="Old House Face 04">
+                        <p>老屋顏與犀牛盾合作，推出聯名手機殼。圖／老屋顏工作室</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/ch3/ch3_oldhouseface_05.jpg" alt="Old House Face 05">
+                        <p>老屋顏設計之臺灣招牌 LINE 貼圖。圖／老屋顏工作室</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/ch3/ch3_oldhouseface_06.jpg" alt="Old House Face 06">
+                        <p>老屋顏自製之窗花風格桌曆。圖／老屋顏工作室</p>
+                    </div>
+                </div>
+            </div>
+            <div class="story-columns">
+                <p>老屋顏工作室秉持對地方的使命感在文創設計中保留這份手作感，不僅延續傳統技藝，也賦予老屋元素新的生命與社會價值。透過老屋顏的努力，臺灣的街景記憶不再只是被動保存的歷史，而是可以被重新認識、被商品化、被傳播，並在年輕世代的創意下找到新的實用場域。
+                </p>
+                <p>傳統不只是過去，它可以與創新共生，成為現代文化中有溫度、有故事的一部分。</p>
+                <p style="text-align: center; margin-top: 5vh; margin-bottom: 10vh;">老屋顏 FB 粉絲專頁：<a href="https://www.facebook.com/OldHouseFace/" target="_blank"  rel="noopener noreferrer">https://www.facebook.com/OldHouseFace/</a>
+                    <br>老屋顏 IG 粉絲專頁：<a href="https://www.instagram.com/oldhouseface/" target="_blank"  rel="noopener noreferrer">https://www.instagram.com/oldhouseface/</a>
+                </p>
+                </p>
+            </div>
+        </section>
+        </article>
+
+        <article id="chapter-6" class="chapter">
+        <section class="scrolly-section vertical-scroll" id="sec-6">
+            <div class="sticky-container">
+                <div class="background-visual fading-bg" style="background-image: url(img/ch4/ch4_00.jpg);"></div>
+            </div>
+            <div id="sec-2-1-overlay" class="content-overlay container-fluid">
+                <div class="overlay-title">
+                    <h2 class="display-4 fw-bold text-white"
+                        style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%;">當招牌會老去，<br>記憶要由誰守住？</h2>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="story-columns" style="margin-top: 15vh; margin-bottom: 0px;">
+                <p">當我們仰望眼前的城市街景，屬於傳統招牌的記憶將逐漸在這一世代中模糊。</p>
+                <p>這份歷史記憶，無可厚非地會隨著時間不斷消退，文化消逝，在長遠的時間軸上幾乎是必然，因為每一代都有屬於自己的樣貌，也都有自己選擇保留和放下的東西。身為站在這塊土地上的人，屬於我們的臺灣傳統文化也許會變形、會更迭，甚至有一天某些形式真的會消失，在焦急於文化消逝的呼喊下，我們或許能夠換個角度置放這份焦慮，重新思考在「更新」與「保存」之間是否仍有可能並存。
+                </p>
+                <p>在這個「什麼都可以更新」的世代，老職人因應世代變遷，為自身掌握的技藝做出最適宜的打 算，在即便人力斷層、都市更新等種種因素的環境壓力下，從 Learn Bar 的創業理念、Kingson
+                    的工法，到老屋顏的文化轉譯，仍有年輕一代面對傳統被政策與市場邊緣化的現實，並沒有把手繪招牌視為「只能被懷舊」的遺物，而是主動替它找新的功能與位置，透過創作、紀錄、重新設計，讓這些老元素以創新角色活化，在新的空間裡繼續存在。
+                </p>
+            </div>
+            <img src="img/ch4/ch4_01.jpg" style="width:100%;height:auto;">
+            <div class="story-columns" style="margin-top: 0vh; margin-bottom: 15vh;">
+                <p>文化，為一塊土地的必要存在，不可諱言，歷史記憶的淡化與文化形式的更替是現代社會中難以避免的過程。然而，這並不意味著社會必須完全被動地接受一切痕跡的抹平。相反地，個體與群體仍可透過日常選擇，拒絕將自身定位為僅接受單一視覺規範的「同質化城市居民」。因為當我們漸漸地失去對於文化的認知，社會將會趨近同質化，喪失文化位置所象徵的特殊性。
+                </p>
+                <p>從文化復振角度出發，當現今社會環境與經營型態不再易於臺灣傳統手繪招牌技藝的傳承，傳統也需要配合世代潮流，將文化精髓融入創新行銷以利曝光，將這些屬於臺灣的傳統技藝進行文化轉譯，轉化為與當代生活型態接軌的視覺元素與資源。
+                </p>
+                <p>從個體層次出發，社會可以做些什麼？或許我們需成為環境具有意識的主體，意識到文化其所承載的時代資訊，並願意為其留下記錄、生成敘事。因此，當我們在街上行走時，不妨抬起頭看看街道仍懸掛的手繪老招牌，即便其顏料已然斑駁、結構不再完好，但那一刻所面對的不僅是對單一物件「是否應被更換」的技術性判斷，更是一個關於集體記憶與文化取向的根本問題。
+                </p>
+            </div>
+        </section>
+        <section class="scrolly-section vertical-scroll" id="sec-6-2">
+            <div class="sticky-container">
+                <div class="background-visual fading-bg" style="background-image: url(img/ch4/ch4_04.jpg);"></div>
+                <div class="overlay-title">
+                    <h3 class="display-6 fw-bold text-white text-center" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6); line-height: 150%; margin-bottom: 10vh;">我們要成為願意記得文化的人，還是習慣於遺忘文化的人？</h3>
+                    <h3 class="fw-bold text-white text-center">我們可以選擇前者，</h3>
+                    <h3 class="fw-bold text-white text-center">成為為臺灣文化驕傲的人。</h3>
+                </div>
+            </div>
+            <div id="sec-6-2-overlay" class="content-overlay container-fluid">
+            </div>
+        </section>
+        </article>            
 
     </main>
 
     <footer class="bg-dark text-white py-4 text-center">
-        <p>&copy; 2025 Scrollytelling Template</p>
+        <p>〈字裡行間的城市記憶——臺灣手繪招牌的消逝與重生〉｜國立臺灣大學新聞研究所　網頁設計與敘事2025年期末專題報導</p>
+        <p>企劃／許巧昕、許容榕、王浚耀；網站設計／許巧昕、許容榕；網站工程／王浚耀</p>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
 </body>

@@ -8,7 +8,7 @@ body {
     padding: 0;
     font-family: 'Noto Serif TC', sans-serif;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 200%;
     overflow-x: hidden; /* Prevent accidental horizontal scroll on body */
 }
@@ -64,12 +64,12 @@ h1, h2, h3, h4, h5, h6 {
 #header-text-box {
     position: relative;
     z-index: 10;
-    padding: 30px;
+    padding: 60px;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(50px);
     border-radius: 8px;
     width: 80%;
-    max-width: 1000px;
+    max-width: 1200px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 3px solid white;
 }
@@ -164,11 +164,37 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Extend sec-2-2 height for additional content */
 #sec-2-2 {
-    height: 300vh;
+    height: auto;
+    padding-bottom: 10vh; /* Add some breathing room at the bottom */
+    background-color: #666666;
+}
+
+#sec-2-2 .content-overlay {
+    min-height: auto;
 }
 
 #sec-3-3 {
-    height: 350vh;
+    height: auto;
+    padding-bottom: 10vh;
+}
+
+#sec-3-3 .content-overlay {
+    min-height: auto;
+}
+
+#sec-6-2 .overlay-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    pointer-events: auto;
 }
 
 #sec-0-1 {
@@ -313,9 +339,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .story-columns {
-    max-width: 860px;
+    max-width: 820px;
     width: 100%;
-    line-height: 2;
+    line-height: 1.8;
     /* text-shadow: 1px 1px 3px rgba(0,0,0,0.35); */
     margin: 0 auto; /* ensure centered when not using flex */
     text-align: justify;
@@ -326,10 +352,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Divider between stacked story columns */
-.story-columns + .story-columns {
-    border-top: 2px solid rgba(255, 255, 255, 0.6);
+.story-columns.hw + .story-columns {
+    border-top: 2px dotted rgba(255, 255, 255, 0.6);
     margin-top: 6vh;
     padding-top: 6vh;
+}
+
+.story-columns.hw.black + .story-columns.black {
+    border-top-color: black;
 }
 
 .overlay-title {
@@ -383,11 +413,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .photo-caption {
     margin-top: 12px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: left;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Before/After wipe for sec-3-1 */
@@ -447,7 +476,7 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-section {
     background-color: #fff;
     color: #000;
-    padding: 15vh 0;
+    padding: 15vh 0 5vh 0;
 }
 
 .timeline-container {
@@ -505,4 +534,20 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
     color: #333;
     text-align: justify;
+}
+
+/* Highlighter Effect */
+.highlight {
+    background-color: #ffffc5;
+    color: #000;
+    padding: 0 4px;
+    border-radius: 2px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }

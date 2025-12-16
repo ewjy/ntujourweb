@@ -1,0 +1,44 @@
+/* Horizontal Gallery (Carousel) */
+.horizontal-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0; /* Removed side padding to fit in story-columns */
+    margin: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for cleaner look */
+    scroll-behavior: smooth;
+}
+
+.horizontal-gallery::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.gallery-item {
+    min-width: 280px;
+    width: 45%; /* Show roughly 2 items */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for uniformity */
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: translateY(-5px);
+}
+
+.gallery-item p {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+}

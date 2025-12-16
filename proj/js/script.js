@@ -102,6 +102,20 @@ document.addEventListener('DOMContentLoaded', () => {
             s21Title.style.transform = `translateY(-${liftPx * progress}px)`;
         }
 
+        // Fade in sec-2-3 image when section reaches 80% of viewport height
+        const sec23 = document.getElementById('sec-2-3');
+        const sec23Img = document.getElementById('sec-2-3-img');
+        if (sec23 && sec23Img) {
+            const rect = sec23.getBoundingClientRect();
+            const vh = window.innerHeight;
+            // Trigger when top of section reaches 80% of the viewport height
+            if (rect.top <= vh * 0.2) {
+                sec23Img.style.opacity = '1';
+            } else {
+                sec23Img.style.opacity = '0';
+            }
+        }
+
         // Flying cards for Chapter 4 (sec-4-3, sec-4-4, sec-4-5)
         const flySections = [
             { id: 'sec-4-3', cards: ['sec-4-3-card'] },
@@ -305,36 +319,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Typewriter Effect Observer
-    const typewriterElements = document.querySelectorAll('.typewriter');
-    if (typewriterElements.length >= 2) {
-        const firstLine = typewriterElements[0];
-        const secondLine = typewriterElements[1];
+    const typewriterGroups = {};
+    
+    document.querySelectorAll('.typewriter').forEach(el => {
+        const group = el.getAttribute('data-group') || 'default';
+        if (!typewriterGroups[group]) {
+            typewriterGroups[group] = [];
+        }
+        typewriterGroups[group].push(el);
+    });
 
-        // When first line finishes typing, trigger the second line
-        firstLine.addEventListener('animationend', (e) => {
-            if (e.animationName === 'typing') {
-                secondLine.classList.add('active');
-            }
-        });
+    Object.keys(typewriterGroups).forEach(groupKey => {
+        const elements = typewriterGroups[groupKey];
+        if (elements.length === 0) return;
 
+        // Chain animations
+        for (let i = 0; i < elements.length - 1; i++) {
+            const current = elements[i];
+            const next = elements[i+1];
+            
+            // Remove existing listeners to prevent duplicates if this runs multiple times (though script runs once)
+            // Actually, anonymous functions can't be removed easily. 
+            // But since this script runs once on load, it's fine.
+            
+            current.addEventListener('animationend', (e) => {
+                if (e.animationName === 'typing') {
+                    next.classList.add('active');
+                }
+            });
+        }
+
+        // Observer for the first element of the group
+        const firstEl = elements[0];
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     // Start the first line
-                    firstLine.classList.add('active');
-                    // Reset second line so it waits for the trigger
-                    secondLine.classList.remove('active');
+                    firstEl.classList.add('active');
+                    // Reset others so they wait for the trigger
+                    for (let i = 1; i < elements.length; i++) {
+                        elements[i].classList.remove('active');
+                    }
                 } else {
-                    // Reset both when scrolling away
-                    firstLine.classList.remove('active');
-                    secondLine.classList.remove('active');
+                    // Reset all when scrolling away
+                    elements.forEach(el => el.classList.remove('active'));
                 }
             });
         }, { threshold: 0.5 });
 
-        // Observe the first line to trigger the sequence
-        observer.observe(firstLine);
-    }
+        observer.observe(firstEl);
+    });
 
     // Generic Fade In Observer
     const fadeElements = document.querySelectorAll('.fade-in-element');
@@ -347,6 +381,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.3 });
 
     fadeElements.forEach(el => fadeObserver.observe(el));
+
+    // Auto-scroll Gallery
+    const gallery = document.getElementById('auto-scroll-gallery');
+    if (gallery) {
+        // Clone items for infinite scroll effect
+        gallery.innerHTML += gallery.innerHTML;
+
+        let isHovered = false;
+        
+        // Pause on hover/touch
+        gallery.addEventListener('mouseenter', () => isHovered = true);
+        gallery.addEventListener('mouseleave', () => isHovered = false);
+        gallery.addEventListener('touchstart', () => isHovered = true);
+        gallery.addEventListener('touchend', () => isHovered = false);
+
+        function autoScroll() {
+            if (!isHovered) {
+                gallery.scrollLeft += 3; 
+                
+                // Reset check
+                // When we reach the start of the duplicated set (halfway), reset to 0
+                if (gallery.scrollLeft >= (gallery.scrollWidth / 2)) {
+                    gallery.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        }
+        
+        autoScroll();
+    }
 
     // Initialize positions on load
     window.dispatchEvent(new Event('scroll'));
