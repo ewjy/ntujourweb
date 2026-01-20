@@ -1,11 +1,10 @@
-// Defer header background loading to prioritize critical content
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Random Header Background Collage
     const headerBgContainer = document.getElementById('header-bg-container');
+    
     if (headerBgContainer) {
         const totalImages = 51;
-        // Only use 1 set for GitHub Pages (reduced from 2)
-        const numberOfSets = 1;
+        const numberOfSets = 2;
         
         let indices = [];
         for (let s = 0; s < numberOfSets; s++) {
@@ -21,22 +20,15 @@ window.addEventListener('load', () => {
 
         const selectedIndices = indices;
 
-        // Load images with optimized settings for GitHub Pages
-        selectedIndices.forEach((index, position) => {
+        // Append images to the container
+        selectedIndices.forEach(index => {
             const img = document.createElement('img');
             img.src = `img/ch0_banner/ch0_banner_${index}.jpg`;
             img.alt = "";
             img.loading = "lazy";
-            // Stagger loading to reduce bandwidth spike
-            img.style.willChange = 'auto';
-            // Add fetchpriority for non-critical images
-            if (position > 10) img.fetchPriority = 'low';
             headerBgContainer.appendChild(img);
         });
     }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
 
     const horizontalSections = document.querySelectorAll('.horizontal-scroll');
 
