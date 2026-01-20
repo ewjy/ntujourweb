@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (headerBgContainer) {
         const totalImages = 51; // Total number of images in ch0_banner
         // Duplicate the images multiple times to ensure we fill the screen and more
-        const numberOfSets = 4; 
+        const numberOfSets = 2; // Reduced from 4 to 2 for faster loading 
         
         // Create an array of indices [1, 2, ..., 51]
         let indices = [];
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = `img/ch0_banner/ch0_banner_${index}.jpg`;
             img.alt = ""; // Decorative
+            img.loading = "lazy"; // Lazy load images
             headerBgContainer.appendChild(img);
         });
     }
