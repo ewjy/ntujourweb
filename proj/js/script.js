@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Defer header background loading to prioritize critical content
+window.addEventListener('load', () => {
     // Random Header Background Collage
     const headerBgContainer = document.getElementById('header-bg-container');
     if (headerBgContainer) {
-        const totalImages = 51; // Total number of images in ch0_banner
-        // Duplicate the images multiple times to ensure we fill the screen and more
-        const numberOfSets = 2; // Reduced from 4 to 2 for faster loading 
+        const totalImages = 51;
+        // Only use 1 set for GitHub Pages (reduced from 2)
+        const numberOfSets = 1;
         
-        // Create an array of indices [1, 2, ..., 51]
         let indices = [];
         for (let s = 0; s < numberOfSets; s++) {
             const set = Array.from({ length: totalImages }, (_, i) => i + 1);
@@ -19,18 +19,24 @@ document.addEventListener('DOMContentLoaded', () => {
             [indices[i], indices[j]] = [indices[j], indices[i]];
         }
 
-        // Select all indices (now duplicated)
         const selectedIndices = indices;
 
-        // Append images to the container
-        selectedIndices.forEach(index => {
+        // Load images with optimized settings for GitHub Pages
+        selectedIndices.forEach((index, position) => {
             const img = document.createElement('img');
             img.src = `img/ch0_banner/ch0_banner_${index}.jpg`;
-            img.alt = ""; // Decorative
-            img.loading = "lazy"; // Lazy load images
+            img.alt = "";
+            img.loading = "lazy";
+            // Stagger loading to reduce bandwidth spike
+            img.style.willChange = 'auto';
+            // Add fetchpriority for non-critical images
+            if (position > 10) img.fetchPriority = 'low';
             headerBgContainer.appendChild(img);
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
 
     const horizontalSections = document.querySelectorAll('.horizontal-scroll');
 
